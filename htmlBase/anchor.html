@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>하이퍼링크</title>
+    <script src="http://code.jQuery.com/jQuery-latest.min.js"></script>
+    <script>
+        $(function () {
+            $('#move').click(function () {
+                $('body,html').animate({
+                    scrollTop:0
+                },2000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1 id="top">가나 쇼핑몰</h1>
+    <h2><a href="#news">오늘의 스포츠 핫뉴스</a></h2>
+    <a href="http://www.kbs.co.kr">한국방송공사</a>
+    <br> <!-- 줄바꿈 태그 -->
+    <a href="http://hyundai.com">
+        <img src="../images/car_purple.jpg" alt="자동차" title="http://hyundai.com">
+    </a>
+    <br>
+    <a href="Hello.html">여행지 탐험</a>
+    <br><br><br>
+    <img src="../images/Koala.jpg" alt="코알라">
+    <br>
+    <h2 id="news">메시 버린 바르사가 '2600억 홀란 산다고?...레반도프스키 대체자 영입 계획</h2>
+    <p>선수단 임금 규모도 대폭 축소된 바르셀로나가 1년 만에 홀란을 영입할 정도로 재정적인 능력을 회복할 수 있을지도 의문이다. 여전히 바르셀로나는 선수단 임금 규모를 축소시키기 위해 고생하고 있다. 리오넬 메시를 떠나보내게 된 이유에서 여전히 자유롭지 못한 바르셀로나다.</p>
+    <p>이런 상황에서 프리미어리그(EPL)에서 최고 수준의 연봉자인 홀란을 데려온다는 건 굉장히 어려운 미션처럼 보인다. 맨시티에서 확실하게 에이스로 인정받은 홀란이 1년 뒤에 바르셀로나로 이적을 선택할 것 같은 그림도 그려지지 않는다.</p>
+    <br>
+    <!--<a href="#top">맨위로 ↑</a>  페이지 안에서 위치 이동 -->
+    <a id="move" href="#">맨위로 ↑</a> <!-- href 속성에 #만 있으면 빈 링크-->
+</body>
+</html>
