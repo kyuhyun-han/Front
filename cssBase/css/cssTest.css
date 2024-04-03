@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+h1 {
+    color: darkgoldenrod;
+    font-size: 20px;
+}
+
+p {
+    color: mediumvioletred;
+}
