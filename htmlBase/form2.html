@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 관련 태그들2</title>
+</head>
+<body>
+    <form action="">
+        <p>
+            <label for="">이름</label>
+            <input type="text" value="홍길동" readonly> <!-- 수정불가 ( 읽기 전용 )-->
+            <input type="hidden" name="code" value="1234"> 
+        </p>
+        <h3>좋아하는 스포츠종목은? (다수 선택가능)</h3>
+        <p><!-- 글씨 클릭으로 체크하려면 label 태그 사용 -->
+            <label><input type="checkbox" name="sports1" value="football" >축구</label>
+            <label><input type="checkbox" name="sports2" value="baseball">야구</label>
+            <label><input type="checkbox" name="sports3" value="volleyball">배구</label>
+        </p>
+        <h3>여름방학 특강 - 수강할 과목을 선택하세요(1과목만 선택가능)</h3>
+        <p> <!-- name의값을 하나로통일 (한개 선택)-->
+            <label><input type="radio" name="subject" value="eng" checked>영어회화</label>
+            <label><input type="radio" name="subject" value="ch">중국어회화</label>
+            <label><input type="radio" name="subject" value="jp">일어회화</label>
+        </p>
+        <p>
+            <label for="address">주소</label>
+            <input type="text" name="address" id="address" size="50">
+        </p>
+        <fieldset> <!-- 영역 구분 -->
+            <legend>과 티셔츠 설문</legend> <!-- fieldset의 제목 -->
+            <p>올해 과 티(T)를 만들려고 합니다. 원하는 색상을 추천해 주세요</p>
+            <label for="">선호색상 <input type="color" value="#0000ff" name="choice"></label>
+        </fieldset>
+    </form>
+</body>
+</html>
