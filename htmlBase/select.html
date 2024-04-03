@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기타 등등</title>
+    <style>
+        #intro{
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h2>여름방학 특강 신청</h2>
+        <fieldset>
+            <legend>수강 신청인</legend>
+            <p>
+                <label for="">학번</label>
+                <input type="text" name="classNum">
+            </p>
+            <p>
+                <label for="">성명</label>
+                <input type="text" name="name">
+            </p>
+            <p>
+                <label>학과</label>
+                <select name="class" id="class">
+                    <option value="archi">건축공학과</option>
+                    <option value="mechanic">기계공학과</option>
+                    <option value="indust">산업공학과</option>
+                    <option value="elec">전기전자공학과</option>
+                    <option value="computer">컴퓨터공학과</option>
+                    <option value="chemical">화학공학과</option>
+                </select>
+            </p>
+            <p>
+                <label>학과</label>
+                <select name="class" id="class" size="4" multiple>
+                    <option value="archi">건축공학과</option>
+                    <option value="mechanic">기계공학과</option>
+                    <option value="indust">산업공학과</option>
+                    <option value="elec">전기전자공학과</option>
+                    <option value="computer">컴퓨터공학과</option>
+                    <option value="chemical">화학공학과</option>
+                </select>
+            </p>
+        </fieldset>
+    </form>
+    <h2>소개글</h2>
+    <textarea name="" id="intro" cols="20" rows="5"></textarea>
+</body>
+</html>
