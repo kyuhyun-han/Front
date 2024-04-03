@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css선택자</title>
+    <style>
+        /* 
+        * { 전체 선택자
+            color: lightskyblue;
+        }
+
+        h2 { 태그 선택자
+            background-color: lightgreen;
+        }
+
+        p {
+            background-color: black;
+        }
+
+        ul {
+            border: 6px dotted darkorange;
+        }
+         */
+
+        #title { /* id선택자*/
+            color: red;
+        }
+
+        #back {
+            background-color: darkcyan;
+        }
+
+        .target { /* class선택자*/
+            background-color: greenyellow;
+        }
+        
+        .line {
+            border: 2px solid red;
+        }
+
+        p.target {
+            font-family: "consolas";
+        }
+    </style>
+</head>
+<body>
+    <h2 id="title">css 선택자 수업</h2>
+    <p class="target">기본선택자 - 태그선택자, id선택자, class선택자</p>
+    <p class="target line">응용선택자 - 부모선택자, 자식선택자, 후손선택자...</p>
+    <h2>css 속성 수업</h2>
+    <h2 id="back">웹 페이지 제작</h2>
+    <ul>
+        <li>웹 페이지 주제 구상</li>
+        <li>와이어프레임</li>
+        <li>html제작</li>
+        <li class="target">css작업</li>
+    </ul>
+    <p>abcd</p>
+</body>
+</html>
+<!-- class 중복가능, 여러개의 class를 가질수있다. -->
