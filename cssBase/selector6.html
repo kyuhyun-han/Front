@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상태선택자</title>
+    <style>
+        input[type=text]:focus{ /* 필터 선택자 ':' 사용 focus한 태그만 색상 변경 */
+            background-color: beige;
+        }
+
+        input:disabled{
+            background-color: aqua;
+            border: 2px solid mediumvioletred;
+        }
+
+        p>label {
+            display: inline-block; 
+            width: 100px;
+
+            
+        }
+
+        input:checked + span {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>방학 특강 신청</h2>
+    <form>
+        <p>
+            <label for="">이름</label>
+            <input type="text" name="name" value="김철수" disabled> <!-- disabled 비활성화 -->
+        </p>
+        <p>
+            <label for="">전화번호</label>
+            <input type="text">
+        </p>
+        <p>
+            <label for="">주소</label>
+            <input type="text">
+        </p>
+        <fieldset>
+            <legend>신청과목</legend>
+            <p>방학특강에 신청할 과목을 선택하세요</p>
+            <label>
+                <input type="radio" name="subject" value="excel">
+                <span>엑셀</span>
+            </label>
+            <label>
+                <input type="radio" name="subject" value="powerPoint">
+                <span>파워포인트</span>
+            </label>
+            <label>
+                <input type="radio" name="subject" value="hangul">
+                <span>한글</span>
+            </label>
+        </fieldset>
+    </form>
+</body>
+</html>
+
+<!-- 인라인 블록
+    인라인 태그에 블록태그의 성질을 주고 width 로 크기
+-->

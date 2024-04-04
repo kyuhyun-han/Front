@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 선택자</title>
+    <style>
+        #menu > li:first-child{
+            color: red;
+        }
+
+        #menu > li:last-child{
+            color: blue;
+        }
+
+        #menu > li:nth-child(3){
+            color: green;
+        }
+
+        #menu > li:nth-child(2n+1){
+            background-color: yellow;
+        }
+
+        table {
+            width: 200px;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+        table tr:nth-child(2n+1){ /* table > tr 이 안먹는 이유 table과 tr사이에 tbody가 존재 (생략됨) 따라서 > 기호가아닌 ' ' 띄어쓰기로 접근해야 한다.*/
+            background-color: aqua;
+        }
+
+        table tr:nth-child(2n){
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+    <h2>오늘의 메뉴</h2>
+    <ul id="menu">
+        <li>부대찌개</li>
+        <li>된장찌개</li>
+        <li>김치찌개</li>
+        <li>비빔밥</li>
+        <li>냉면</li>
+        <li>칼국수</li>
+    </ul>
+    <table border="1" >
+        <tr><td>블루베리</td></tr>
+        <tr><td>귀리</td></tr>
+        <tr><td>토마토</td></tr>
+        <tr><td>시금치</td></tr>
+        <tr><td>적포도주</td></tr>
+        <tr><td>견과류</td></tr>
+        <tr><td>브로콜리</td></tr>
+        <tr><td>연어</td></tr>
+        <tr><td>마늘</td></tr>
+        <tr><td>녹차</td></tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형제,속성 선택자 응용</title>
+    <style>
+        input[type = checkbox]:checked + div{
+            height: 0;
+        }
+        div {
+            width: 300px;
+            height: 400px;
+            overflow: hidden;
+            transition: 3s;
+        }
+        div > p { /* p태그의 px은 16 이므로  8px만큼 글자간격을 준다.*/
+            line-height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox">뉴스 감추기
+    <div>
+        <h2>"창의성 부족→백패스만 쌓였다"</h2>
+        <p>파리 생제르맹(PSG)은 이겼지만, 이강인(23)은 팀 내 최하점을 피하지 못했다.</p>
+        <p>PSG는 4일(이하 한국시간) 프랑스 파리 파르크 데 프랭스에서 열린 2023-2024시즌 쿠프 드 프랑스(프랑스컵) 4강전에서 스타드 렌을 1-0으로 제압하고 결승에 진출했다.</p>
+    </div>
+</body>
+</html>
+
+<!-- 
+    필터 선택자 ' : '
+
+-->

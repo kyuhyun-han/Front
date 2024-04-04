@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 선택자</title>
+    <style>
+        a:link{ /* 처음 링크 */
+            text-decoration: none; /* 밑줄 없애기 */
+        }
+
+        a:visited{ /* 클릭 후 링크 */
+            text-decoration: none;
+            color: chartreuse; 
+        }
+
+        a:hover,a:focus{ /* 마우스를 올리거나 , 포커스되면 */
+            text-decoration: underline;
+            color: blue;
+        }
+
+        a:active{ /* 마우스를 누른 상태 */
+            text-decoration: none;
+            color: yellow;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h2>영화정보</h2>
+    <ul>
+        <li><a href="#">현재상영작</a></li>
+        <li><a href="#">상영예정작</a></li>
+    </ul>
+</body>
+</html>
+
+<!-- 가상 선택자 anchor 태그는 순서를 맞춰야한다 -->

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 선택자</title>
+    <style>
+        img {
+            width: 200px;
+            height: 300px;
+        }
+        img[src$="png"]{
+            border: 3px solid red;
+        }
+
+        img[src$="jpg"]{
+            border: 3px solid green;
+        }
+
+        img[src$="gif"]{
+            border: 3px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h2>오늘의 교제</h2>
+    <img src="../images/jajq.png" alt="교재">
+    <img src="../images/node.jpg" alt="교재">
+    <img src="../images/ux.gif" alt="교재">
+</body>
+</html>
+
+<!-- 속성뒤에 $를 주면
+    속성$="~끝나는것"으로 사용 가능
+    "" 안의 전체 내용을 적을 필요없이 마지막 확장자 확인
+-->

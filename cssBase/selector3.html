@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형제 선택자, 속성 선택자</title>
+    <style>
+        h1 + h2 {
+            color: rgb(238, 26, 26);
+        }
+
+        h1 ~ h2 {
+            background-color: orange;
+        }
+
+        input[type = text]{
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS3</h1>
+    <h2>기본 선택자</h2>
+    <h2>응용 선택자</h2>
+    <h2>기본 속성</h2>
+    <h2>응용 속성</h2>
+    <form>
+        <label for="">아이디</label>
+        <input type="text"> <br>
+        <label for="">비밀번호</label>
+        <input type="password">
+    </form>
+</body>
+</html>
+
+<!-- 
+    태그1 + 태그2 -> + 는 태그1에 인접한 태그
+    태그1 ~ 태그2 -> ~ 은 태그1에 인접한 모든 태그
+
+-->
