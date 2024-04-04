@@ -17,20 +17,36 @@
             /* background-color: rgb(111, 233, 182); */
             background-color: rgba(100, 142, 180, 0.5); /* 투명도 */
         }
+
+        #box > p {
+            color: rgb(174, 173, 255);
+        }
+
+        #box p {
+            background-color: yellow;
+        }
+
+        .choice {
+            color: tomato;
+        }
     </style>
 </head>
 <body>
     <div id="box">
         <h2>CSS3</h2>
-        <p>CSS3 선택자</p>
+        <p>CSS3 <span class="choice">선택자</span></p>
         <p>CSS3 속성</p>
+        <ul>
+            <li>웹 페이지 주제 구상</li>
+            <li>와이어프레임</li>
+            <li>html제작</li>
+            <li>css작업</li>
+        </ul>
+        <div id="inner">
+            <p>내부에 있는 단락</p>
+        </div>
     </div>
-    <ul>
-        <li>웹 페이지 주제 구상</li>
-        <li>와이어프레임</li>
-        <li>html제작</li>
-        <li>css작업</li>
-    </ul>
+    
 </body>
 </html>
 <!-- 인라인 요소와 블록요소 구분 -->
