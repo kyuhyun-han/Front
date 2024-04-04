@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 관려 스타일</title>
+    <style>
+        h2 {
+            text-decoration: underline;
+
+        }
+
+        .price > span {
+            text-decoration: line-through;
+        }
+
+        .veg {
+            text-decoration: overline;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        .shadow1{
+            
+            text-shadow: 3px 0px 0px #ccc;
+        }
+
+        .shadow2{
+            color: #fff;
+            text-shadow: 5px -5px 3px #000;
+        }
+
+        div{
+            width: 400px;
+            height: 150px;
+            background-color: #000;
+        }
+
+        div > h1 {
+            text-align: center;
+            color: #000;
+            line-height: 150px;
+            text-shadow: 0 0 4px #ccc,
+                        0 -5px 4px #ff3,
+                        2px -10px 6px #fd3,
+                        -2px -15px 11px #f80,
+                        2px -19px 18px #f20;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="shadow1">풀스택 : 프론트엔드 + 백엔드</h1>
+    <h1 class="shadow2">풀스택 : 프론트엔드 + 백엔드</h1>
+    <div>
+        <h1>
+            불타는금요일
+        </h1>
+    </div>
+    <h2>토마토</h2>
+    <p>토마토는 비타인 A, C가 풍부한 <span class="veg">채소</span>이다.</p>
+    <p class="price"><span>정상가격 : 50,000원</span> 할인가격 45,000원</p>
+    
+</body>
+</html>
