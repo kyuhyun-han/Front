@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴만들기</title>
+    <style>
+        #menu {
+            overflow: hidden;
+        }
+        #menu > li {
+            list-style: none;
+            padding: 10px;
+            background-color: beige;
+            float: left; /*  */
+        }
+        #menu > li > a {
+            text-decoration: none;
+            color: #000;
+        }
+        p {
+             clear: both; /* float 속성해제 */
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">재품소개</a></li>
+        <li><a href="#">서비스</a></li>
+        <li><a href="#">커뮤니티</a></li>
+        <li><a href="#">자료실</a></li>
+    </ul>
+    <p>메뉴 아래 단락</p>
+</body>
+</html>
