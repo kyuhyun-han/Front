@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 배치</title>
+    <style>
+        .target {
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            background-color: darkcyan;
+        }
+        #box {
+            display: none; /* 화면에서 사라짐 ( 공간도 사라짐 )*/
+            visibility: hidden; /*화면에서 사라짐 ( 공간은 있음 )*/
+            /* box-sizing: content-box; content영역을 기준으로 박스크기를 정한다. */
+            box-sizing: border-box; /* width,height값을 고정하고 border,padding을 적용한다.*/
+            width: 300px;
+            height: 300px;
+            background-color: darkorchid;
+            border: 2px solid rgb(0, 0, 0);
+            padding: 10px;
+        }
+
+        img {
+            opacity: 0.03; /* 이미지 투명도  0 ~ 1*/
+            transition: 10s;
+        }
+        img:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <span>대한민국</span>
+    <p class="target">오늘은 금요일입니다.</p>
+    <span>다음주 수요일 - 선거일 휴무</span>
+    <div id="box">
+        나의 크기는 얼마
+    </div>
+    <p>레이아웃 속성</p>
+    <img src="../images/ghot.jpg" alt="펭귄">
+</body>
+</html>
