@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전환효과</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border: 3px solid red;
+            /* transition-property: width,height;
+            transition-duration: 0.5s;
+            transition-delay: 1s; 
+            transition-timing-function: ease; */
+            transition: border 2s;
+
+        }
+        #box:hover{
+            width: 200px;
+            height: 200px;
+            border: 10px dotted green;
+        }
+        img{
+            opacity: 0.1;
+            transition: opacity 5s;
+        }
+        img:hover{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="../images/monster.png" alt="">
+    </div>
+</body>
+</html>
