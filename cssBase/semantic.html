@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시멘틱 태그</title>
+    <style>
+        body{
+            font-family: "맑은고딕","고딕","굴림";
+        }
+        header {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #069;
+            padding: 10px;
+            overflow: hidden;
+        }
+        header > h1 {
+            width: 40%;
+            float: left;
+            padding: 30px;
+            color: #fff;
+        }
+        header > nav {
+            width: 50%;
+            margin: 20px;
+
+            float: right;
+        }
+        header ul {
+            
+            list-style: none;
+        }
+        header ul li {
+            float: left;
+            margin: 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+
+        }
+        #content > section {
+            width: 80%;
+            margin: 0 auto;
+            border: 5px solid #333;
+            padding: 5px;
+        }
+        #content > section > article {
+            width: 90%;
+            margin: 20px 10px;
+            padding: 20px;
+        }
+        #content > section > article > h2 {
+            font-size: 1.2em;
+            background-image: url(../images/bg.png);
+            background-repeat: no-repeat;
+            background-position: left center;
+            padding-left: 30px;
+
+        }
+        #content > section > article dt {
+            font-weight: bold;
+            color: purple;
+        }
+        #pet1 {
+            border: 1px solid;
+            border-radius: 10px;
+        }
+        #pet2 {
+            border: 1px dotted;
+            border-radius: 20px;
+        }
+        #pet3 {
+            border: 1px double;
+            border-top-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+        #content > aside {
+            width: 80%;
+            margin: 0 auto;
+            background-color: bisque;
+            padding: 10px;
+        }
+        #content > aside > h2 {
+            font-size: 1.2em;
+        }
+        footer {
+            width: 80%;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>애완견</h1>
+        <nav>
+            <ul>
+                <li><a href="#">애완견 종류</a></li>
+                <li><a href="#">입양하기</a></li>
+                <li><a href="#">건강돌보기</a></li>
+                <li><a href="#">더불어살기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="content">
+        <section>
+            <article id="pet1">
+                <h2>활달한 강아지</h2>
+                <dl>
+                    <dt>요크셔 테리어</dt>
+                    <dd> 요크셔 테리어는 1850년대에 처음 등장한 견종으로 옛 견종인 '블랙 앤 탄 테리어'에서 유래되었다.</dd>
+                    <dd>잘 짖는 편이므로 어릴 적부터 짖지 못하도록 훈련시킨다. 많은 운동이 필요하지는 않으나 하루에 10분씩 가벼운 산책을 시켜 스트레스를 풀어준다.</dd>
+                    <dt>말티즈</dt>
+                    <dd>몰티즈는 몰타 섬이 고향으로 알려진 소형견으로 앙증맞은 외모와 애교 넘치는 성격, 흰 털로 많은 사랑을 받는 반려견이다.</dd>
+                    <dt>포메라니안</dt>
+                    <dd>지금은 작은 반려견이지만 포메라니안은 북극에서 썰매를 끌던 개들의 후손으로 초창기에는 지금보다 큰 편이었다.</dd>
+                    <dt>골든 리트리버</dt>
+                    <dd>이중모의 구조기 때문에 봄에 속털이 빠지므로 이 시기에 솔질을 자주 해주어 빠진 털을 제거하여 피부병을 예방하고, 워낙 얌전한 개이므로 인위적인 운동을 시켜 비만을 방지해야 한다.</dd>
+                </dl>
+            </article>
+            <article id="pet2">
+                <h2>온순한 강아지</h2>
+                <dl>
+                    <dt>시츄</dt>
+                    <dd>시츄는 티벳에서 유래했으나 중국 왕실에서 키워지면서 발전한 견종이다. 털이 콧등에서 위쪽으로 자라는 특징이 있어 머리 부분에 국화꽃을 닮은 피모가 형성되어 있다. 성격은 다정하고 활발하다.</dd>
+                    <dt>퍼그</dt>
+                    <dd>퍼그는 비율이 잘 맞고 근육이 단단해서 '작지만 알찬'특징이 잘 나타나는 견종이다. 차분한 성격과 다부진 체구를 가졌다.</dd>
+                    <dt>래브라도 리트리버</dt>
+                    <dd>래브라도 리트리버는 적응력이 우수하고 헌신적인 반려견이다. 체형이 탄탄하고 허리가 짧은 편이다. 매우 활동적이며 물을 극히 좋아한다.</dd>
+                </dl>
+            </article>
+            <article id="pet3">
+                <h2>사납지만 복종적인 강아지</h2>
+                <dl>
+                    <dt>미니어처핀셔</dt>
+                    <dd>독일에서 쥐잡이를 목적으로 개량한 개의 한 품종이다. </dd>
+                    <dt>푸들</dt>
+                    <dd>푸들은 야생물새 사냥에 활용되던 견종으로 충성심이 깊기로 유명한 견종이다. 곱슬곱슬한 털이 돌돌 말리거나 매듭처럼 꼬인 형태로 덮여있다. 학습 능력이 뛰어나 훈련시키기 쉬워 반려견으로 매우 적합하다.</dd>
+                    <dt>폭스테리어</dt>
+                    <dd>예민한 감각과 민첩한 행동, 총명한 두뇌를 겸비하고 있다. 애완용이 된 것은 19세기 말경이다. 균형잡힌 정방형의 골격을 하고 있다.</dd>
+                </dl>
+            </article>
+        </section>
+        <aside>
+            <h2>건강한 강아지는</h2>
+            <ul>
+                <li>코가 젖어있고 눈 꼽이 없어야 한다</li>
+                <li>털에 윤기가 있는 것을 골라야 한다</li>
+                <li>입에서 고약한 냄새가 나면 병이 있다는 증거입니다</li>
+                <li>가장 활발하게 움직이는 녀석을 고르는게 좋습니다</li>
+                <li>강아지들 중에서 적당한 체구를 유지한 강아지가 좋습니다.</li>
+            </ul>
+        </aside>
+    </div>
+    <footer>
+        <p>Copyright 2024 pet.com</p>
+    </footer>
+</body>
+</html>
