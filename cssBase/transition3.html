@@ -24,11 +24,17 @@
             position: absolute;
             left: 0;
             top: 250px;
+            opacity: 0;
+            transition: all 0.3s;
         }
         .dogList h3, .dogList p {
             text-align: center;
             color: #fff;
             line-height: 60px;
+        }
+        .dogList li:hover .caption{
+            opacity: 1;
+            transform: translateY(-250px);
         }
     </style>
 </head>
