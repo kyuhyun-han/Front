@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변형</title>
+    <style>
+        div {   /* 이미지 크기를 변형시킬때 영역을 잡고 영역 내에서 크기를 조절한다. */
+            width: 250px;
+            height: 240px;
+            border: 2px solid red;
+            overflow: hidden; /* 벗어난 영역을 안보이게 한다. */
+        }
+        .girl {
+            transition: transform  0.3s;
+        }
+
+        .girl:hover{
+            transform: scale(1.1);
+        }
+        p{
+            width: 200px;
+            border: 1px solid black;
+            white-space: nowrap;/* 영역을 벗어난 글을 줄바꿈 x  */
+            overflow: hidden;
+            text-overflow: ellipsis;    /* 영역을 벗어난 글을 ... 으로 보이게한다 ( 뉴스 ) */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img class="girl" src="../images/girl.jpg" alt="소녀">
+    </div>
+    <p>오늘은 월요일입니다. 날씨가 맑고 좋아요</p>
+</body>
+</html>

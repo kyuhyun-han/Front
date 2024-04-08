@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변형</title>
+    <style>
+        .trans1 {
+            transition: transform 2s; 
+        }
+        .trans1:hover {
+            transform: translate(100px,200px);   /* x, y축으로 위치이동 */
+        }
+        .trans2 {
+            transition: transform 2s;
+        }
+        .trans2:hover {
+            transform: scale(-1,1); /* x,y축 크기조절 */
+        }
+    </style>
+</head>
+<body>
+    <img class="trans1" src="../images/car_green.jpg" alt="자동차">
+    <br>
+    <img class="trans2" src="../images/car_red.jpg" alt="자동차">
+</body>
+</html>

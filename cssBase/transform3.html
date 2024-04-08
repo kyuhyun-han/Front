@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변형</title>
+    <style>
+        .rotate {
+            transition: transform 2s;
+        }
+        .rotate:hover{
+            transform: rotate(9000deg); /* 회전 각도 */
+        }
+        .skew{
+            transition: transform 1s;
+        }
+        .skew:hover{
+            transform:skew(10deg,10deg);/* 비틀기 */
+        }
+    </style>
+</head>
+<body>
+    <img class="rotate" src="../images/car_green.jpg" alt="자동차">
+    <img class="skew" src="../images/girl.jpg" alt="소녀">
+</body>
+</html>
