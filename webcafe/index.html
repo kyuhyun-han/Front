@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko"><!-- 1. ko로 변경 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebCafe</title>
+    <link rel="shortcut icon" href="images/common/webcafe.ico"> <!--2. link favicon -> icon 설정 -->
+    <link rel="stylesheet" href="css/normalize.css">    <!--3.  외부 css 연결 -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <!-- 건너뛰기 링크 영역 시작  -->
+    <a id="skipNav" href="#contentsArea">본문바로가기</a>
+    <!-- 건너뛰기 링크 영역 종료 -->
+
+    <!-- wrapper 영역( 전체 영역 ) 시작  -->
+    <div id="wrapper">
+        <!-- header 영역 시작 -->
+        <header>
+            <h1 class="logo"><!-- 전체 웹페이지 제목 -->
+                <a href="index.html">
+                    <img src="images/logo.png" alt="WebCafe">
+                </a>
+            </h1>
+            <ul class="infoLink">
+                <li><a href="#">홈</a></li>
+                <li><a href="#">로그인</a></li>
+                <li><a href="join.html">회원가입</a></li>
+                <li><a href="#">사이트맵</a></li>
+                <li><a href="#">ENGLISH</a></li>
+            </ul>
+            <nav>
+                <h2 class="hidden">메인 메뉴</h2>
+                <ul class="mainMenu">
+                    <li><a href="#">HTML에 대해</a>
+                        <ul class="aboutHTML">
+                            <li><a href="#">HTML5 소개</a></li>
+                            <li><a href="#">레퍼런스 소개</a></li>
+                            <li><a href="#">활용 예제</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">CSS에 대해</a>
+                        <ul class="aboutCSS">
+                            <li><a href="#">CSS 소개</a></li>
+                            <li><a href="#">CSS2 VS CSS3</a></li>
+                            <li><a href="#">CSS 애니메이션</a></li>
+                            <li><a href="#">CSS Framework</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">웹 표준</a>
+                        <ul class="webStandard">
+                            <li><a href="#">웹 표준이란</a></li>
+                            <li><a href="#">W3C</a></li>
+                            <li><a href="#">HTML의 현재와 미래</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">웹 접근성</a>
+                        <ul class="webAccessiblility">
+                            <li><a href="#">웹 접근성의 개요</a></li>
+                            <li><a href="#">장애 환경의 이해</a></li>
+                            <li><a href="#">장차법</a></li>
+                            <li><a href="#">웹 접근성 품질마크</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">묻고 답하기</a>
+                        <ul class="qna">
+                            <li><a href="#">묻고 답하기</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">1대1 질문</a></li>
+                            <li><a href="#">웹표준</a></li>
+                            <li><a href="#">웹접근성</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">자료실</a>
+                        <ul class=""
+                            <li><a href="#">공개 자료실</a></li>
+                            <li><a href="#">이미지 자료실</a></li>
+                            <li><a href="#">웹표준 자료실</a></li>
+                            <li><a href="#">웹접근성 자료실</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- header 영역 종료 -->
+        <!-- visual 영역 시작 -->
+        <div id="visual">
+            <p>Web Standard &amp; webAccessiblility</p>
+        </div>
+        <!-- vusual 영역 종료 -->
+        <!-- contents 영역 시작 ( 헤더와 푸터를 제외한 홈페이지 부분)-->
+        <div id="contentsArea">
+            <!-- 로그인 및 배너, 용어 설명 관련 컨텐츠 컬럼 시작-->
+            <div id="usefulArea">
+                <section class="login"> <!-- 로그인 -->
+                    <h2>로그인</h2>
+                    <form action="login.jsp" method="post" id="loginForm"> 
+                        <fieldset>
+                            <legend>회원 로그인 폼</legend>
+                            <p>
+                                <label for="userId">아이디</label>
+                                <input type="text" id="userId" name="userId" placeholder="Guest" required>  <!-- required 필수로작성 -->
+                            </p>
+                            <p>
+                                <label for="userPw">비밀번호</label>
+                                <input type="password" id="userPw" name="userPw" placeholder="4자이상 8자이하" required>
+                            </p>
+                            <p>
+                                <button type="submit">로그인</button>
+                            </p>
+                        </fieldset>
+                    </form>
+                    <div class="memberLink">
+                        <a href="join.html" class="join">회원가입</a>
+                        <a href="#" class="find">아이디/비밀번호 찾기</a>
+                    </div>
+                </section>
+
+                <section class="validation">    <!-- 배너 -->
+                    <h2 class="hidden">유효성 검사</h2><!-- 섹션의 제목이 보이지 않는 것들을 class hidden으로 준다. -->
+                    <ul>
+                        <li><a href="http://validator.w3.org/" title="마크업 유효성 검사 사이트로 이동" target="_blank">W3C Markup Validation</a></li>
+                        <li><a href="http://jigsaw.w3.org/css-validator/" title="css 유효성 검사 사이트" target="_blank">W3C CSS Validation Service</a></li>
+                    </ul>
+                </section>
+
+                <section class="term">   <!-- 용어 관련 -->
+                    <h2>웹 관련 용어</h2>
+                    <a href="#">
+                        <dl>
+                            <dt>웹 표준이란?</dt>
+                            <dd><img src="images/web_standards.gif" alt="W3C 로고" width="61" height="68"></dd> 
+                            <dd>W3C 단체에서 규정한 웹 기술 사양에 대한 규칙을 말하여 표준 규격은...</dd>
+                        </dl>
+                    </a>
+                </section>
+            </div>
+            <!-- 로그인 및 배너, 용어 설명 관련 컨텐츠 컬럼 종료-->
+            <!-- 검색 폼, 공지사항, 자료실 계시판 및 새소식 컨텐츠 컬럼 시작 -->
+            <div id="infoArea">
+                <section class="search">
+                    <h2 class="hidden">웹 카페 검색</h2>
+                    <form action="search.jsp" method="get" id="searchForm">
+                        <fieldset>
+                            <legend>검색 폼</legend>
+                            <label for="keyword">자료검색</label>
+                            <input type="search" name="keyword" id="keyword" required placeholder="검색어를 입력하세요">
+                            <button type="submit">검색</button>
+                        </fieldset>
+                    </form>
+                </section>
+            </div>
+            <!-- 검색 폼, 공지사항, 자료실 계시판 및 새소식 컨텐츠 컬럼 종료 -->
+            <!-- 신규 이벤트 관련사이트, 인기사이트 콘텐츠 컬럼 시작 -->
+            <div id="linkArea">
+
+            </div>
+            <!-- 신규 이벤트 관련사이트, 인기사이트 콘텐츠 컬럼 종료 -->
+        </div>
+        <!-- contents 영역 종료 -->
+        <!-- slogan 영역 시작 ( 인용 문구 )-->
+        <section id="slogan">
+
+        </section>
+        <!-- slogan 영역 종료 -->
+        <!-- footer 영역 시작 -->
+        <footer>
+
+        </footer>
+        <!-- footer 영역 종료 -->
+    </div>
+    <!-- wrapper 영역 종료 -->
+</body>
+</html>
