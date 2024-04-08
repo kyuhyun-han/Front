@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #area {
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+            position: relative; /* 자식태그에 position을 정의했을때 부모 태그에 position을 반드시 정의해야한다. */
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            position: absolute;/* relative : 자기위치에서 움직임  , absolute : 부모의top 0 left 0 의 위치에서 움직임*/
+        }
+
+        .box1{
+            background-color: red;
+            left: 0;
+            top: 0;
+            z-index: 30;
+        }
+        .box2{
+            background-color: green;
+            left: 30px;
+            top: 30px;
+            z-index: 20;
+        }
+        .box3{
+            background-color: blue;
+            left: 50px;
+            top: 50px;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <h1>중요한 포지션</h1>
+    <img src="../images/Koala.jpg" alt="코알라">
+    <div id="area">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+    </div>
+</body>
+</html>
