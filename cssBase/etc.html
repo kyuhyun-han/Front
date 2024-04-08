@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>특이한 응용</title>
+    <style>
+        #cbimg{
+            display: none;
+        }
+        #cbimg+label span{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: url(../images/c.svg) no-repeat;
+            vertical-align: middle; /* 이미지와 글자 위치 맞추기 */
+        }
+        #cbimg:checked+label span{
+            background: url(../images/c2.svg) no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="checkbox" id="cbimg"> 
+        <label for="cbimg">
+            <span></span>쿠쿠밥솥
+        </label>
+    </div>
+</body>
+</html>
