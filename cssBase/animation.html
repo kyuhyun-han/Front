@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션</title>
+    <style>
+        /* @keyframes 애니메이션 이름 {
+            수행내용
+        } */
+
+        @keyframes colorChange {
+            from{
+                background-color: blue;
+                border: 1px solid blue;
+            }to{
+                background-color: aquamarine;
+                border-radius: 50%;
+            }
+        }
+
+        @keyframes rotate {
+            from{
+                transform: rotate(0deg);
+            }to{
+                transform: rotate(90deg);
+            }
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin-bottom: 20px;
+        }
+        .box1 {
+            /*animation-name:colorChange ;
+            animation-duration: 3s;
+            animation-direction: alternate;      /* 원래 색으로 돌아가는 것 까지 카운트로 포함한다 */
+            /*animation-iteration-count: infinite; /* 무한 반복 : infinite */
+            /*animation-timing-function: ease-in;*/
+            animation: colorChange 3s alternate infinite, rotate 3s alternate infinite; /*한번에 정의 가능 (순서맞추기), 여러개의 애니메이션 사용가능*/
+        }
+
+        .box1:hover{
+            animation-play-state: paused;
+        }
+
+        .box2 {
+            animation-name: rotate;
+            animation-duration: 2s;/* 2초동안 */
+            animation-delay: 2s; /* 2초뒤에 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+</body>
+</html>
