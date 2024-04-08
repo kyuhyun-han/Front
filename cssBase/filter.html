@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>필터</title>
+    <style>
+        img{
+            /* filter: blur(10px);  흐림 */
+            filter: grayscale(100%);
+
+
+            transition: all 3s;
+        }
+        img:hover{
+            /* filter: blur(0); */
+            filter: grayscale(0%);
+        }
+    </style>
+</head>
+<body>
+    <img src="../images/Penguins.jpg" alt="펭귄">
+</body>
+</html>
