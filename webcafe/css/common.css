@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* 초기화  */
+html, body, div, header, nav, section, aside, article, footer, figure, figcaption, fieldset, legend, ul, ol, li, dl, dt ,dd, h1, h2, h3, p{
+    margin: 0 auto;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+fieldset{
+    border: 0;
+}
+
+/* 숨긴 컨텐츠 */
+.hidden, legend, caption {
+    position:absolute;
+    left:-9999px;
+}
+
+/* 웹 폰트 다운로드 */
+@font-face{
+    font-family: "Nanum";
+    font-weight: 400;
+    src: url("font/NanumGothic.ttf")format("truetype");
+}
+
+@font-face{
+    font-family: "NanumBold";
+    font-weight: 600;
+    src: url("font/NanumGothicBold.ttf")format("truetype");
+}
+
+@font-face{
+    font-family: "NanumEX";
+    font-weight: 900;
+    src: url("font/NanumGothicExtraBold.ttf")format("truetype");
+}
+
+@font-face{
+    font-family: "webCafeIcon";
+    font-weight: 400;
+    src: url("font/webcafeIcon.ttf")format("truetype"),
+        url("font/webcafeIcon.svg#webcaferegular")format("svg");
+}
+
+
+
+
+
