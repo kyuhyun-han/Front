@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+    <script>
+        window.onload = function(){
+            let output = "";
+            let date = new Date();
+            let hour = date.getHours();
+            output += "<ul>";
+            if(hour > 16){
+                output += "<li>후라이드 치킨</li>";
+                output += "<li>양념 치킨</li>";
+                output += "<li>골뱅이 무침</li>";
+                output += "<li>오징어와 땅콩</li>";
+            }else{
+                output += "<li>김치찌개</li>";
+                output += "<li>된장찌개</li>";
+                output += "<li>순두부찌개</li>";
+                output += "<li>비빔밥</li>";
+            }
+            output+="</ul>";
+            document.body.innerHTML += output;
+        }
+    </script>
+</head>
+<body>
+    <h1>종로 치킨</h1>
+    <h2>주요 메뉴</h2>
+</body>
+</html>
+<!-- document.body.innerHTML = "<p> 자바스크립트 </p>";
+    이렇게 작성시 아직 body를 거치지 않았기 때문에 에러 발생 
+    따라서 
+    window.onload = function(){} 안에 작성하여 window를 거친 후 실행되도록 한다.
+-->
