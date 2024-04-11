@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+    <style>
+        #result {
+            width: 500px;
+            height: 100px;
+            margin: 50px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 1px 2px 1px #666;
+            font-size: 1.4em;
+            line-height: 100px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function qua(){
+            let btn = prompt("숫자를 입력하세요 : ", "0"); /* default값 0  */
+            let result = document.querySelector("#result");
+            if(btn != null){
+                if(btn % 3 == 0){
+                    result.innerHTML = btn + "은 3의 배수입니다.";
+                }else{
+                    result.innerHTML = btn + "은 3의 배수가 아닙니다.";
+                }
+            }else{
+                alert("입력이 취소 되었습니다.")
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="qua();">3의 배수 체크 문제 풀기</button>
+    <div id="result">
+
+    </div>
+</body>
+</html>
