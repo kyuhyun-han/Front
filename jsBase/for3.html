@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문( for )</title>
+    <script>
+        let name = ['서울방송','한국방송','문화방송','교육방송'];
+        let url = ['sbs.co.kr','kbs.co.kr','imbc.com','ebs.co.kr'];
+        document.write("<h1> [ 방송 채널 안내 ] </h1>");
+        for(let i=0; i<url.length; i++){
+            document.write("<h2><a href='http://www." + url[i] + "'>" + name[i] + "</a></h2>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

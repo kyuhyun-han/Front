@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 ( for )</title>
+    <script>
+        let seasons = ["봄", "여름","가을","겨울"];
+        document.write(seasons); /* 자바는 주소가 나옴  */
+        let name = "korea";
+        document.write(name[0] + "<br>");    /* js는 문자를 배열 형식으로 담기 때문에 문자의 인덱스를 출력하면 인덱스에 맞는 문자만 출력 */
+        let nums = [10,20];
+        nums.push(30);
+        nums.push(40);
+        nums.push(70);      /* js의 배열은 크기가 정해져 있지않기 때문에 값을 추가 할 수 있다. ( 자바의 컬렉션과 같은 느낌 ) */
+        document.write(nums + "<br>");
+        let arr = [10,"대한민국",2.5,false];    /* js의 배열에는 여러타입의 값이 들어간다. */
+        let fruits = ['딸기','사과','참외','자두'];
+        for(let i in fruits){
+            document.write(fruits[i]);
+        }
+        for(let a=1; a<=3; a++){
+            for(let b=1; b<=5; b++){
+                document.write(a + "=======" + b + "<br>");
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

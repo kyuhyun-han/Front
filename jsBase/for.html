@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문( for )</title>
+    <script>
+        // let sum = 0;
+        // for(let i=1; i<=100; i++){
+        //     sum += i;
+        // }
+        // document.write("1부터 100까지의 합 = " + sum);
+        
+        let seasons = ["봄", "여름","가을","겨울"];
+        // for(let i=0; i<seasons.length; i++){
+        //     document.write(seasons[i] + "<br>");
+        // }
+
+        // for(let i=seasons.length-1; i>=0; i--){ /* 역순 */
+        //     document.write(seasons[i] + "<br>");
+        // }
+
+        let scores = [89,78,56,99,90,86,70,85,60];
+        let tot = 0;
+        let avg = 0;
+        for(let i = 0; i<scores.length; i++){
+            tot += scores[i];
+        }
+        avg = tot/scores.length;
+        document.write("총합은 : " + tot + "<br>");
+        document.write("평균은 : " + Math.round(avg));
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
