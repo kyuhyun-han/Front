@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+</head>
+<body>
+    <script>
+        // let fi = Number(prompt("1분기 실적입력 : "));
+        // let se = Number(prompt("2분기 실적입력 : "));
+        // let th = Number(prompt("3분기 실적입력 : "));
+
+        let fi = 1200;
+        let se = 1300;
+        let th = 1000;
+        let fo = Number(prompt("4분기 실적입력 : "));
+        let tot = fi+se+th;
+        let avg = tot/3;
+
+        let result = (avg < fo ) ? "판매량이 평균 이상입니다." : "판매량이 평균 미만입니다.";
+        document.write(result);
+    </script>
+</body>
+</html>
