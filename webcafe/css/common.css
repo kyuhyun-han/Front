@@ -45,6 +45,257 @@ fieldset{
         url("font/webcafeIcon.svg#webcaferegular")format("svg");
 }
 
+/* 링크 스타일 */
+a:link {
+    color: #4f4f4f; /* 방문안했을때  색 */
+    text-decoration: none;
+}
+
+a:visited{
+    color: #8a8e91;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: #f00;
+    text-decoration: none;
+}
+
+/* 기본 스타일 */
+body {
+    color: #000;
+    background-color: #fff;
+    font-size: 12px;
+    line-height: 1.2; /* 줄간격은 단위를 쓰지않으면 배수  */
+    font-family: "Nanum";
+}
+
+/* 건너뛰기 링크 */
+#skipNav {
+    position: absolute;
+    left: -9999px;
+
+}
+
+#skipNav:focus{
+    left:0;
+    margin: 3px 0 0 3px;
+    padding: 5px 15px;
+    background-color: #000;
+    color: #fff;
+    z-index: 10;
+}
+
+/* 전체적인 레이아웃 */
+#header, #visual, #contentsArea, #slogan, #footerInner {
+    width: 1024px;
+    margin: 0 auto;
+    box-sizing: border-box; /* border가 width를 벗어나지 않음 */
+}
+
+#wrapper {
+    background-image: url("images/bg_flower.png"),linear-gradient(to bottom, #c7c7c7 0%,#fff 70%, #fff 100%);
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+/* 헤더 영역 */
+#header {
+    position: relative;
+    height: 110px;
+    background-color: #fff;
+    border-radius: 0 0 15px 15px;
+    padding: 0 30px;
+}
+#header .logo {
+    position: absolute;
+    top: 37px;
+    left: 60px;
+}
+#header .infoLink {
+    text-align: right;
+}
+#header .infoLink > li {
+    display: inline-block;
+    padding: 8px 0 7px 3px;
+}
+#header .infoLink a::before {
+    content: ":";
+    padding-right: 8px;
+}
+#header .infoLink >li:first-child a::before {
+    content: "";
+    padding-right: 8px;
+}
+#header .mainMenu li, #header .mainMenu a {
+    display: inline-block;   
+}
+#header .mainMenu {
+    background-image: linear-gradient(to bottom, #ffc848 0%, #ff8208 40%,#ff8208 60%, #ffc848 100%);
+    height: 45px;
+    padding-left: 300px;
+    border-top: 2px solid #000;
+    border-radius: 0 0 5px 5px;
+}
+#header .mainMenu > li {
+    position: relative;
+}
+#header .mainMenu > li > a {
+    font-family: "NanumEX";
+    font-size: 1.16em;
+    padding: 15px 20px;
+    color: #fff;
+    letter-spacing: 1px;
+    border-left: 1px solid #fff;
+    text-shadow: 1px 0 rgba(0,0,0,0.3), -1px 0 rgba(0,0,0,0.3), 0 1px rgba(0,0,0,0.3), 0 -1px rgba(0,0,0,0.3);
+}
+#header .mainMenu > li > a:hover, #header .mainMenu > li > a:focus {
+    color: yellow;
+}
+#header .mainMenu > li > a:hover::after, #header .mainMenu > li > a:focus::after {
+    content: "";
+    display: block; 
+    background-color: #000;
+    height: 2px;
+    width: 100%;
+    position: relative;
+    top: 12px;
+}
+#header .mainMenu ul a {
+    padding: 8px 0 7px 15px;
+}
+#header .mainMenu ul a::before{
+    content: "r";
+    font-family: webcafeIcon;
+    color: #666;
+    position: relative;
+    top: 2px;
+}
+#header .mainMenu ul a:hover::before, #header .mainMenu ul a:focus::before {
+    content: "c";
+    font-family: webcafeIcon;
+    color: #f00;
+
+}
+#header .mainMenu ul {
+    display: none;
+    position: absolute;     /* inline요소 absolute를 주면 왼쪽부터 하나씩 채워진다. */
+    white-space: nowrap;    /* 공백제거 */
+    z-index: 10;
+}
+#header .mainMenu > li:hover ul{
+    display: block;
+}
+
+#header .webAccessibility {
+    left: -100px;
+}
+#header .qna {
+    left: -150px;
+}
+#header .archive{
+    right: 0;
+}
+/* 헤더 영역 끝 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
