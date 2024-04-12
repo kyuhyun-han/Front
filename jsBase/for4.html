@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문(for)</title>
+    <style>
+        .gugu {
+            display: inline-block;
+            border: 1px solid #ccc;
+            padding: 0 20px 30px 20px;
+            margin: 15px;
+            box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
+            line-height: 2;
+        }
+        .gugu:hover{
+            background-color: antiquewhite;
+        }
+        .gugu h3{
+            text-align: center;
+        }
+    </style>
+    <script>
+        document.write("<h2>구구단</h2>");
+        for(let dan =2; dan <=9; dan++){
+            document.write("<div class = 'gugu'>");
+            document.write("<h3>" + dan + " 단</h3>");
+            for(let num=1; num<=9; num++){
+                document.write(dan + " X " + num + " = " + dan*num + "<br>");
+            }
+            document.write("</div>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
