@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+    <script>
+        // 배열
+        let fruit =["수박","참외","자두","복숭아"];
+        for(let i =0; i<fruit.length; i++){
+            document.write(fruit[i] + "<br>");
+        }
+        alert(fruit[0]);
+
+        // 객체
+        let product={
+            제품명 : '건조망고',
+            유형 : '당절임',
+            가격: 7000,
+            원산지 : '필리핀'
+        }
+        // alert(product.가격);
+        // alert(product['원산지']);
+        for(let key in product){
+            document.write(" ■ " + key + "☞" + product[key] + "<br>")
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

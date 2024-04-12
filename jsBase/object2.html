@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+    <script>
+        let book ={
+            title : '어린왕자',
+            pages : 65,
+            price : 15000,
+            author : '생텍쥐페리'
+        };
+        document.write("<h2> ** 신간 도서 정보 ** </h2>");
+        for(let key in book){
+            document.write(key + " : "  + book[key] + "<br>");
+        }
+        let person = {
+            name : '김철수',
+            age : 26,
+            eat : function(food) {
+                return this.name + "가 " + food + "을(를) 먹습니다.";
+            },
+            address : '서울시 종로구'
+        }
+        // alert(person.name);
+        let result = person.eat("국수");
+        document.write(result);
+        document.write(person.name + "의 현재 나이는" + person.age + "세 입니다.");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

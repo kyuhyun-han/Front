@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+    <script>
+        let student = {
+            이름 : '홍길동',
+            국어 : 90,
+            영어 : 70, 
+            수학 : 88,
+            과학 : 88
+        };
+        let tot = student.국어 + student.영어 + student.수학 + student.과학;
+        let avg = tot /4;
+        document.write("** 홍길동의 성적표 **" + "<br>");
+        document.write("국어 : " + student.국어 + "<br>" + "영어 : " + student.영어 + "<br>" + "수학 : " + student.수학 + "<br>" + "과학 : " + student.과학 + "<br>" );
+        document.write("총점 : " + tot + "<br>" + "평균 : " + avg);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

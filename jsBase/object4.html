@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+    <script>
+        let student = {}; // 빈 객체 생성
+        student.이름 = '홍길동';
+        student.취미 = '악기';
+        student.특기 = '프로그래밍';
+        student.장래희망 = '풀스택개발자';
+        // 객체의 문자열을 반환하는 대표적인 메소드 toString() 모든 js객체는 toString메소드를 상속받아 override해서 사용 가능
+        student.toString = function(){
+            let output = "";
+            for(let key in this){
+                if(key != 'toString'){
+                    output += key + " : " + this[key] + "<br>";
+                }
+            }
+            return output;
+        };
+        document.write(student.toString());
+        delete(student.장래희망); // 속성 제거
+        document.write("===========================" + "<br>");
+        document.write(student.toString());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
