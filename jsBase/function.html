@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+    <script>
+        function hello(na){
+            alert(na + "님 안녕하세요");
+        }
+        function addNum(){
+            let a = Number(prompt());
+            let b = Number(prompt());
+            alert("두 수의 합 = " + (a+b));
+        }
+        hello('홍길동');
+
+    </script>
+</head>
+<body>
+    <h1 onclick="hello('김철수');">함수 호출</h1>
+    <button onclick="addNum();">더하기</button>
+</body>
+</html>
