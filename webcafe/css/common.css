@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* 초기화  */
-html, body, div, header, nav, section, aside, article, footer, figure, figcaption, fieldset, legend, ul, ol, li, dl, dt ,dd, h1, h2, h3, p{
-    margin: 0 auto;
+html, body, div, header, nav, section, aside, article, footer, figure, figcaption, fieldset, legend, ul, ol, li, dl, dt ,dd, h1,h2, h3, p{
+    margin: 0;
     padding: 0;
 }
 
@@ -198,16 +198,176 @@ body {
 }
 /* 헤더 영역 끝 */
 
+/* 비주얼 영역 시작 */
+@keyframes textAni {
+    from{
+        top: 0;
+        left: 0;
+        opacity: 0.2;
+        font-size: 1em;
+    }to{
+        top: 75px;
+        left: 400px;
+        opacity: 1;
+        font-size: 2em;
+    }
+}
+@keyframes flowerAni {
+    from{
+        opacity: 1;
+    }to{
+        opacity: 0;
+    }
+}
+#visual {
+    height: 120px;
+    position: relative;
+}
+
+#visual > p {
+    position: absolute;
+    top: 75px;
+    left: 400px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
+    font-weight: bold;
+    animation: textAni 1s;
+}
+#visual::before, #visual::after{
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    animation: flowerAni 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#visual::before{
+    background-image: url(images/ani_flower_01.png),url(images/ani_flower_02.png);
+    background-repeat: no-repeat;
+    background-position: 0 5px, 670px 0;
+}
+#visual::after{
+    background-image: url(images/ani_flower_03.png),url(images/ani_flower_04.png);
+    background-repeat: no-repeat;
+    background-position: 300px 35px, 800px 65px;
+    animation-delay: 1s;
+}
+/* 비주얼 영역 끝 */
+
+/* 컨텐츠 영역 공통부분 시작*/
+
+#contentsArea{
+    overflow: hidden;
+    min-height: 400px;
+    padding: 30px 0 30px 30px;
+    background-color: #fff;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    flex-flow: row wrap; /*  row 가로로 배치 */
+}
+
+/* 컨텐츠 영역 공통부분  끝*/
+
+/* 슬로건 영역 시작 */
+#slogan{
+    position: relative;
+    padding: 15px 0;
+}
+#slogan > h2 {
+    width: 110px;
+    height: 90px;
+    background: url(images/coffee.png)no-repeat;
+    background-size: 110px 90px;
+    text-indent: 110px; /* 들여쓰기 */
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    left: 30px;
+    bottom: -25px;
+}
+#slogan > p {
+    margin: 0 100px 0 200px;
+    color: #a09784;
+    font-size: 1.08em;
+}
+#slogan q {
+    font-weight: bold;
+}
+#slogan q::before{
+    font-size: 3em;
+    color: #765725;
+    position: relative;
+    top: 15px;
+    left: -5px;
+}
+#slogan q::after{
+    content: "";
+
+}
+/* 슬로건 영역 끝*/
+/* 푸터 영역 시작 */
+#footer{
+    padding: 15px 0;
+    background-image: linear-gradient(to bottom, #c7c7c7 0%, #fff 70%,#fff 100%);
+}
+#footerInner {
+    position: relative;
+
+}
+.footerLogo{
+    position: absolute;
+    left: 35px;
+    top: 45px;
+}
+.guide, address,.copyright{
+    margin-left: 200px;
+    margin-right: 100px;
+}
+.guide {
+    background-color: #7b8385;
+    border-radius: 5px;
+    padding-left: 50px;
+    margin-bottom: 10px;
+    text-transform: uppercase; /* 대문자 전환  */
+}
+.guide li {
+    display: inline-block;
+}
+.guide a {
+    color: #fff;
+    display: inline-block;
+    padding: 10px 15px 10px 0;
+}
+.guide a::before{ 
+    content: "|";
+    padding-right: 20px;
+
+}
+.guide li:first-child a::before{ /* before 앞에줄 제거 , after뒤에줄 제거 */
+    content: "";
+}
+address {
+    font-style: normal;
+    margin-bottom: 5px;
+}
+address > span{
+    margin-right: 10px;
+}
+.techLogoArea{
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+}
 
 
 
 
-
-
-
-
-
-
+/* 푸터 영역 끝 */
 
 
 
