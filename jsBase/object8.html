@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체의 배열화</title>
+    <style>
+        table {
+            width: 500px;
+            border-collapse: collapse;
+        }
+        table tr:first-child{
+            background-color: antiquewhite;
+        }
+        table td {
+            text-align: center;
+        }
+    </style>
+    <script>
+        let student = [];   //  빈 배열
+        student.push({이름 : '홍길동',국어 : 90,영어 : 70, 수학 : 88, 과학 : 60});
+        student.push({이름 : '김철수',국어 : 60,영어 : 88, 수학 : 96, 과학 : 80});
+        student.push({이름 : '이영희',국어 : 80,영어 : 60, 수학 : 70, 과학 : 79});
+        student.push({이름 : '박찬호',국어 : 70,영어 : 68, 수학 : 80, 과학 : 85});
+        student.push({이름 : '손흥민',국어 : 82,영어 : 92, 수학 : 60, 과학 : 72});
+        for(let i in student){
+            student[i].getSum = function() {
+                return this.국어 + this.영어 + this.수학 + this.과학;
+            }
+            student[i].getAvg = function(){
+                return this.getSum()/4;
+            }
+        }
+        document.write("<h2>성적표</h2>");
+        document.write("<table border='1'>");
+        document.write("<tr><th>이름</th><th>국어</th><th>영어</th><th>수학</th><th>과학</th><th>총점</th><th>평균</th></tr>");
+        for(let i in student){
+            with(student[i]){
+                document.write("<tr><td>" + 이름 + "</td><td>" + 국어 + "</td><td>" + 영어 + "</td><td>" + 수학 + "</td><td>" + 과학 + "</td><td>" + getSum() + "</td><td>" + getAvg() + "</td></tr>");
+            }
+        }
+        document.write("</table>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
