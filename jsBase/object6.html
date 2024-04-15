@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장 객체 응용</title>
+    <script>
+        let game = ["바위","가위","보"];
+        let my = prompt("게임(1.바위 2.가위 3.보) 숫자로 입력");
+        let com = Math.floor(Math.random()*3) + 1;
+        document.write("<h1>나는 " + game[my-1] + "를 선택했고 컴퓨터는 " + game[com-1] + " 를 선택했습니다.</h1>");
+        document.write("<img src = '../images/my_img_" + my + ".JPG'>");
+        document.write("================");
+        document.write("<img src = '../images/my_img_" + com + ".JPG'>");
+        if(my == com){
+            document.write("<h2>비겼습니다.</h2>");
+        }else if((my == 1 && com == 2) || (my == 2 && com == 3) || (my == 3 && com == 1)){
+            document.write("<h2>이겼습니다.</h2>");
+        }else{
+            document.write("<h2>졌습니다.</h2>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
