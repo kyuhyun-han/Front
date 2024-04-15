@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 응용</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #container {
+            width: 450px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px #333;
+        }
+        .day1 {
+            padding-top: 20px;
+            text-align: center;
+        }
+        .day > h3 {
+            font-size: 1.2em;
+            color : #666;
+        }
+        .day1 > .count {
+            font-family: "맑은 고딕" sans-serif;
+            font-weight: bold;
+            font-size: 3.5em;
+            margin: 10px 10px 0 10px;
+        }
+        .bar {
+            width: 100%;
+            margin-top: 50px;
+            padding-left: 20px;
+            height: 40px;
+            background-color: #747474;
+            color: #fff;
+            font-size: 1.2em;
+            line-height: 40px
+        }
+        .day2 {
+            width: 450;
+            margin: 20px auto;
+        }
+        .day2 > ul {
+            list-style: none;
+            border-bottom: 1px dashed #ccc;
+            height: 60px;
+        }
+        .day2 > ul:last-child {
+            border-bottom: none;
+        }
+        .day2 .item_title {
+            float: left;
+            width: 160px;
+            font-weight: bold;
+            font-size: 1.5em;
+            line-height: 60px;
+        }
+        .day2 .item_date {
+            float: left;
+            margin-left: 80px;
+            font-size: 1.2em;
+            text-align: center;
+            line-height: 60px;
+        }
+    </style>
+    <script>
+        let now = new Date();
+        let check = false;
+        let errString;
+        let toNow;
+        let toFirst;
+        let passedTime;
+        let passedDay;
+        let day = prompt("처음 만난날을 입력해주세요", "yyyy-mm-dd");
+        if(day != null){
+            check = true;
+        }else{
+            errString ="취소를 선택해서 날짜를 계산할 수 없습니다."
+        }
+        if(check){
+            let firstDay = new Date(day);
+            if(isNaN(firstDay))  {
+                check = false;
+                errString = "문자나 잘못된 날짜 정보로는 기념일을 계산할 수 없습니다."
+            }else {
+                toNow = now.getTime();
+                toFirst = firstDay.getTime();
+                passedTime = toNow - toFirst;
+                passedDay = Math.round(passedTime/(24*60*60*1000));
+            }
+        }
+        window.onload = function (){
+            if(check){
+                document.querySelector("#title").innerHTML +="(" + day + ")";
+                document.querySelector("#count").innerHTML= passedDay + "일";
+                calcDate(100);
+                calcDate(200);
+                calcDate(365);
+                calcDate(1000);
+            }else{
+                alert(errString);
+                document.querySelector("#count").innerHTML="알수없음";
+            }
+        }
+        // 사용자 정의 함수 (기념일 계산)
+        function calcDate(days){
+            let future = toFirst + days*(24*60*60*1000);
+            let someDay = new Date(future);
+            let year = someDay.getFullYear();
+            let month = someDay.getMonth();
+            let date = someDay.getDate();
+            document.querySelector("#date" + days).innerHTML=year+" 년" + month + " 월" + date + " 일";
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div class="day1">
+            <h3 id="title"></h3>
+            <p class="count" id="count">며칠</p>
+        </div>
+        <div class="bar">기념일 계산</div>
+        <div class="day2">
+            <ul>
+                <li class="item_title">100일</li>
+                <li class="item_date" id="date100"></li>
+            </ul>
+            <ul>
+                <li class="item_title">200일</li>
+                <li class="item_date" id="date200"></li>
+            </ul>
+            <ul>
+                <li class="item_title">365일</li>
+                <li class="item_date" id="date365"></li>
+            </ul>
+            <ul>
+                <li class="item_title">1000일</li>
+                <li class="item_date" id="date1000"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
