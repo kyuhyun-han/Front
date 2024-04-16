@@ -95,7 +95,7 @@
             function showList(){ // 목록 보여주는 함수
                 let list = "<ul>";
                 for(let i = 0; i < itemList.length; i++){
-                    list+="<li>" + itemList[i] + "<span class='close' id='i'>" + "X" + "</span>"+"</li>";
+                    list+="<li>" + itemList[i] + "<span class='close' id="+i+">" + "X" + "</span></li>";
                 }
                 list+="</ul>";
                 document.querySelector("#itemList").innerHTML = list;
@@ -106,7 +106,7 @@
             }
             function removeList(){ // 항목 제거 함수 
                 let id = this.getAttribute("id");
-                itemList.splice(id); 
+                itemList.splice(id,1); 
                 console.log(itemList);
                 showList();
             }
