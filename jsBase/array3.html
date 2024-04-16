@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열객체 메소드</title>
+    <script>
+        // 자기 자신을 변화 : push, pop reverse, sort, splice
+        // 자기 자신 불변 : concat, join, slice 
+        let fruits1 = ['바나나','사과','수박','참외'];
+        let fruits2 = ['멜론','포도','오렌지'];
+        fruits1.pop(); // 배열에서 요소를 추출 (맨뒤)
+        console.log(fruits1[3]); // undefind
+        console.log(fruits1.length);
+        fruits2.shift(); // 배열에서 요소를 추출 ( 맨앞 )
+        let fruits3 = ['바나나','사과','수박','참외'];
+        let fruits4 = ['멜론','포도','오렌지',"배"];
+        // 원하는 위치의 요소를 삭제, 추가 (splice)
+        fruits3.splice(2); // 인덱스부터 끝까지 추출
+        console.log(fruits3);
+        //fruits4.splice(2,1); // 인덱스부터 갯수 만큼 추출
+        fruits4.splice(2,1,"딸기","파인애플");
+        console.log(fruits4);
+        let nums = [10,20,30,40,50,60,70,80];
+        nums.splice(3);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

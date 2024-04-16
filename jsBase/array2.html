@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열객체의 메소드</title>
+    <script>
+        // 자기 자신을 변화 : push, pop reverse, sort, splice
+        // 자기 자신 불변 : concat, join, slice 
+        let fruits1 = ['바나나','사과','수박','참외'];
+        let fruits2 = ['멜론','포도','오렌지'];
+        // 배열을 합쳐서 새로운 배열을 만들어주는 메소드
+        let totalFruits = fruits1.concat(fruits2);
+        alert(totalFruits[5]);
+        //배열을 하나의 문자열로 만들어주는 메소드
+        //let str = fruits1.join(); //join에 아무것도 없으면  , 로 연결
+        let str = fruits1.join("-"); // - 로 연결
+        //alert(str);
+        fruits1.push("복숭아","망고"); // 맨 뒤에 추가
+        fruits2.unshift("배");// 맨 앞에 추가
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
