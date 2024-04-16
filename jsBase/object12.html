@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 메소드 상속 오버라이딩</title>
+    <script>
+        //toString()메소드는 객체를 문자열로 변환하여 자동 호출
+        let obj = new Object();
+        //alert(obj.toString());
+        let student = {
+            name: '홍길동',
+            age : 26,
+            toString : function(){
+                return this.name + "은 나이가 " + this.age + "세 입니다.";
+            }
+        };
+        alert(student);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
