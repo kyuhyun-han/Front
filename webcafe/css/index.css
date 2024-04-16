@@ -371,9 +371,123 @@
     font-style: normal;
     display: block;
 }
+.btnEventArea {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.btnEventArea a{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-indent: 20px;
+    background-image: url(images/back_forward.png);
+    background-repeat: no-repeat;
+}
+.btnEventPrev{
+    background-position: 0 0;
+}
+.btnEventNext{
+    background-position: 100% 0;
+}
 
 
 /* 관련 사이트 영역 */
+
+.relatedLink h2{
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+.relatedLink ul{    /* li 여러개를 한개만 보이게 하는방법 */
+    height: 25px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: height 0.2s;
+}
+.relatedLink ul:hover{
+    height: 125px;
+    padding: 10px 0;
+}
+.relatedLink li {
+    height: 25px;
+    line-height: 25px;
+    text-indent: 1.5em;
+}
+.relatedLink a { /* 영역 전부 a가 걸린다. */
+    display: block;
+}
+
+
+/* 인기사이트 영역 */
+.hotLink{
+    margin-top:20px ;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom, #fff 0%, #f4f4f4 100%);
+    padding: 10px 12px 8px 10px;
+}
+.hotLink h2 {
+    font-size: 1.2em;
+}
+.hotLink span {
+    color: #ff3c00;
+}
+.hotLink .more{
+    position: absolute;
+    top: 8px;
+    right: 6px;
+    padding: 8px;
+
+}
+.hotLink ol {
+    margin-top: 5px;
+    padding: 0;
+    overflow: hidden;
+
+}
+.hotLink li {
+    position: relative;
+    margin-top: 7px;
+    counter-increment: number;
+}
+.hotLink li::before{
+    content: counter(number,decimal);
+    padding: 2px 5px;
+    background-color: #a1a1a1;
+    border-radius: 3px;
+    margin-right: 5px;
+    color: #fff;
+}
+.hotLink li:last-child{
+    margin-bottom: 2px;
+}
+.hotLink em {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 0;
+    padding-top: 12px;
+    overflow: hidden;
+    background: url(images/rank.png) no-repeat;
+}
+.hotLink .up {
+    background-position: 0 0;
+}
+.hotLink .stop{
+    background-position: 0 50%;
+}
+.hotLink .down{
+    background-position: 0 100%;
+}
+
+
+
 
 
 
@@ -381,3 +495,75 @@
 
 
 /* linkArea 영역 끝 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
