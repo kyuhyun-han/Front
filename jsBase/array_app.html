@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열응용예제</title>
+    <style>
+        #contents {
+            width: 620px;
+            margin: 0 auto;
+
+        }
+        #contents > h2 {
+            text-align: center;
+        }
+        #form {
+            background-color: #007acc;
+            padding: 30px 40px;
+            color: #fff;
+            text-align: center;
+        }
+        #form > input {
+            border: 1px solid #ccc;
+            width: 440px;
+            padding: 10px;
+        }
+        #form > .addBtn {
+            padding: 10px;
+            width: 60px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            color: #555;
+            box-shadow: 1px 2px 4px #167dae;
+            text-align: center;
+            font-size: 0.9em;
+            cursor: pointer;
+        }
+        #itemList ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        #itemList li {
+            position: relative;
+            cursor: pointer;
+            padding: 12px 8px 12px 40px;
+            background-color: #eee;
+            font-size: 1.2em;
+            transition: all 0.5s;
+        }
+        #itemList ul li:nth-child(odd){
+            background-color: #f9f9f9;
+        }
+        #itemList ul li:hover{
+            background-color: #ccc;
+        }
+        #itemList .close{
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 12px 16px;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        #itemList .close:hover{
+            background-color: #f00;
+            color: #fff;
+            
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            let itemList = [];
+            let addButton = document.querySelector("#add");
+            let input = document.querySelector("#item");
+            input.addEventListener("keydown",function(e){
+                if(e.keyCode == 13){
+                    addList();
+                }
+            })
+            addButton.addEventListener("click",addList);
+
+
+            // 사용자 정의 함수
+            function addList(){ // 항목 추가 함수
+                let item = document.querySelector("#item").value;
+                if(item != ""){
+                    itemList.push(item);
+                    input.value = "";
+                    input.focus();
+                    showList();
+                }else{
+                    alert("준비물을 입력한 후 추가를 눌러주세요");
+                }
+            }
+            function showList(){ // 목록 보여주는 함수
+                let list = "<ul>";
+                for(let i = 0; i < itemList.length; i++){
+                    list+="<li>" + itemList[i] + "<span class='close' id='i'>" + "X" + "</span>"+"</li>";
+                }
+                list+="</ul>";
+                document.querySelector("#itemList").innerHTML = list;
+                let remove = document.querySelectorAll(".close");
+                for(let i = 0; i<remove.length; i++){
+                    remove[i].addEventListener("click",removeList);
+                }
+            }
+            function removeList(){ // 항목 제거 함수 
+                let id = this.getAttribute("id");
+                itemList.splice(id); 
+                console.log(itemList);
+                showList();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="contents">
+        <h2>여행 준비물 점검 목록</h2>
+        <div id="form">
+            <input type="text" id="item" autofocus="true"> <!-- autofocus : cursor 자동  -->
+            <button type="button" id="add" class="addBtn">추가</button>
+        </div>
+        <div id="itemList">
+
+        </div>
+    </div>
+</body>
+</html>
