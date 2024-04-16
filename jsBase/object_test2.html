@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        #title{
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            let h = document.querySelector("#title");
+            // h.addEventListener("mouseover",hello);
+            h.addEventListener("mouseout",bye);
+            let ch = document.querySelectorAll('h2');
+            ch[0].addEventListener("click",function(){
+                alert("파이팅");
+            });
+            ch[1].addEventListener("click",function(){
+                alert("만세");
+            });
+        }
+
+        // 선언함수
+        function hello(){
+            alert("안녕하세요");
+        }
+        function bye(){
+            alert("잘가세요");
+        }
+    </script>
+</head>
+<body>
+    <h1 id="title">인사</h1>
+    <h2>대한민국</h2>
+    <h2>가나다라</h2>
+</body>
+</html>

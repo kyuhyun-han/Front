@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델</title>
+    <style>
+        #title{
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            let t = document.querySelector("#title");
+            let content = ["배열객체수업","배열객체메소드","배열객체응용"];
+            let index = 0;
+            t.addEventListener("click",msg);
+            // 사용자 정의 함수
+            function msg(){
+                t.innerHTML = content[index];
+                index++;
+                if(index == 3){
+                    index = 0;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 id="title">프론트엔드</h1>
+</body>
+</html>
