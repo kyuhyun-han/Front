@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>현재시간</title>
+    <style>
+        .display{
+            margin-top: 20px;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #00f;
+            text-align: center;
+        }
+    </style>
+    <script>
+        setInterval(function (){
+            let now = new Date();
+            let time = now.toLocaleTimeString();
+            document.querySelector("#current").innerHTML = time;
+        },1000);
+        
+    </script>
+</head>
+<body>
+    <div id="current" class="display">
+
+    </div>
+</body>
+</html>
