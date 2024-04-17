@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서 객체 모델(DOM : document Object Model) - 생성</title>
+    <script>
+        window.onload = function(){
+            let head2 = document.createElement("h2"); // 요소생성 (요소이름)
+            let textNode = document.createTextNode("문서객체모델");
+            head2.appendChild(textNode);
+            document.body.appendChild(head2);
+            let image = document.createElement("img");
+            image.src="../images/Penguins.jpg";
+            image.width=500;
+            image.height=350;
+            image.alt="펭귄";
+            document.body.appendChild(image);
+        }
+    </script>
+</head>
+<body>
+    <h1 id="head">자바스크립트 DOM 생성</h1>
+</body>
+</html>
