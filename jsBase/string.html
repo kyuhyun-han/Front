@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장객체의 메소드</title>
+    <script>
+        //let str = "대한민국";
+        //let str = new String("대한민국");
+        let str = "computer";
+        let ch = str.charAt(2);
+        alert(ch);
+        let str2 = "hello thank you good luck you";
+        let position = str2.indexOf("you"); // 12
+        let position2 = str2.indexOf("you",16);  // 26
+        let position3 = str2.indexOf("thank",16); // -1 
+        let position4 = str2.lastIndexOf("you"); // 26
+        let position5 = str2.lastIndexOf("you",25); // 12
+        let str3 = str2.match("you");
+        let str4 = "지금은 html 수업중";
+        let str5 = str4.replace("html", "javascript");
+        let position6 = str2.search("you");
+        alert(str5);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

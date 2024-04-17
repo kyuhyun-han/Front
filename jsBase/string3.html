@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 객체 활용</title>
+    <script>
+        // let tel = prompt("당신의 전화번호는 :");
+        // let result = tel.substr(0,9) + "****";
+        // console.log("전화번호 : " + result);
+
+        let email = prompt("이메일 주소는 ?");
+        let check1 = false; // @여부
+        let check2 = false; // url여부
+        let arrUrl = [".co.kr","com",".net",".or.kr",".go.kr"];
+        if(email.indexOf("@") > 0){ // @없으면 -1 
+            check1 = true;
+        }
+        for(let i=0; i<arrUrl.length;i++){
+            if(email.indexOf(arrUrl[i]) > 0){
+                check2 = true;
+                break;
+            }
+        }
+        if(check1 && check2){
+            alert("당신의 이메일 주소는 " + email + "이군요");
+        }else{
+            alert("이메일 형식이 잘못되었습니다.");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
