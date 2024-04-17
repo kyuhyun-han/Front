@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>브라우저 객체 모델 응용</title>
+    <style>
+        #container{
+            width: 500px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+        button{
+            margin-top: 20px;
+            padding: 10px 40px;
+            border: 1px solid #ccc;
+            background-color: rgba(253, 234, 234, 0.6);
+        }
+    </style>
+    <script>
+        let timeWindow = window.open("time.html","","width = 300,height=150");
+        if(timeWindow){
+            timeWindow.moveTo(0,0);
+        }else{
+            alert("팝업 차단을 해제하여 주십시오")
+        }
+        window.onload = function(){
+            let r =Math.floor(Math.random() * 256);
+            let g =Math.floor(Math.random() * 256);
+            let b =Math.floor(Math.random() * 256);
+            document.body.style.background = "rgb(" + r + "," + g + "," + b + ")";
+
+        }
+        function load() {
+            location.reload();
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <p>현재 웹 페이지는 랜덤 배경색을 사용하고 있습니다.</p>
+        <p>새로고침(F5)버튼을 클릭할 때마다 배경색이 달라질 것입니다.</p>
+        <button onclick="load();">새로고침</button>
+    </div>
+</body>
+</html>

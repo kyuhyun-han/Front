@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>브라우저 객체 모델(BOM : Browser Object Model)</title>
+    <script>
+        let child = window.open("","","width =600, height =300");
+        let width = screen.width;
+        let height = screen.height;
+        setInterval(function(){
+            child.moveBy(10,10); // 브라우저 상대위치
+            child.resizeBy(-20,-20); // 상대크기
+        }, 1000);
+        if(child){
+            child.moveTo(0,0); // 브라우저 절대위치 조정
+            child.resizeTo(width,height);// 절대크기 재조정
+            child.document.write("<h2>공지사항</h2>");
+            child.document.write("<p>내일부터 문서객체 모델(DOM) 수업</p>");
+            child.document.write("<p>내일부터 파이썬 수업</p>");
+        }else{
+            alert("팝업 차단을 해제하여 주십시오");
+        }
+    </script>
+</head>
+<body>
+    <h1>여기는 메인페이지</h1>
+</body>
+</html>
