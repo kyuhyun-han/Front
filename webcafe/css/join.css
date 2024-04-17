@@ -1,0 +1,212 @@
+@charset "utf-8";
+/* memberArea 영역 시작 */
+#memberArea{
+    width: 660px;
+    margin-right: 40px;
+    position: relative;
+
+}
+
+.location {
+    position: absolute;
+    top: 18px;
+    right: 30px;
+}
+.location strong{
+    color: #51a41e;
+}
+#memberArea h2{
+    font-size: 1.5em;
+    font-family: "NanumEX";
+    color: #ff3c00;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid #ff6738;
+    padding: 15px 0;
+    margin-bottom: 15px;
+}
+.formSign{
+    text-align: right;
+    margin: 30px 0 10px;
+
+}
+.require{
+    display: inline-block;
+    width: 10px;
+    height: 12px;
+    white-space: nowrap;
+    text-indent: 10px;
+    overflow: hidden;
+}
+
+.require::before{
+    font-family: "webcafeIcon";
+    content: "s";
+    color: #f48002;
+    position: relative;
+    left: -10px;
+}
+#joinForm{
+    border-top: 2px solid #ccc;
+}
+
+#joinForm p {
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+    position: relative;
+}
+#joinForm label, .mailing em {
+    float: left;
+    width: 120px;
+    padding: 13px 20px;
+    margin-right: 10px;
+    font-weight: bold;
+    color: #666;
+    background-color: #fffcef;
+
+}
+#joinForm .mailing label {
+    float: none;
+    padding: 0;
+    width: auto;
+    background-color: none;
+}
+#joinForm input {
+    margin: 10px 0;
+}
+#joinForm input:not([type="radio"]){
+    border: 1px solid #aaa; 
+    height: 18px;
+    padding-left: 5px;
+}
+#joinForm input[type="radio"]{
+    margin: 0;
+
+}
+
+a.idCheck, a.findZipcode{
+    font-family: "NanumEX";
+    font-size: 0.9em;
+    background-color: #fe8389;
+    color: #fff;
+    padding: 3px 15px;
+    margin-left: 5px;
+    border-radius: 20px;
+    text-shadow: 1px 1px 1px #ed676c, 1px -1px 1px #ed676c;
+}
+a.findZipcode{
+    position: absolute;
+    left: 230px;
+    top: 12px;
+}
+input#address{
+    display: block;
+    margin: 0;
+}
+.labelAddress{
+    height: 50px;
+    line-height: 50px;
+}
+
+.mailing em{
+    font-style: normal;
+    height: 35px;
+    line-height: 35px;
+}
+.mailing span {
+    display: block;
+    margin: 10px 0;
+}
+.btnJoinArea{
+    text-align: center;
+    margin: 15px 0;
+}
+.btnJoinArea button{
+    font-family: "NanumEX";
+    font-size: 1.2em;
+    color: #fff;
+    padding: 8px 20px;
+    border: 0;
+    margin: 0 5px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+}
+.btnOk{
+    background: linear-gradient(to bottom, rgba(98,98,98,0.8) 0%, rgb(98,98,98) 50%, rgb(81,81,81) 100%);
+}
+.btnCancel{
+    background: linear-gradient(to bottom, rgba(145,145,145,0.8) 0%, rgb(145,145,145) 50%, rgb(81,81,81) 100%);
+}
+.btnOk::before{
+    font-family: "webcafeIcon";
+    content: "h";
+    font-size: 2em;
+    position: relative;
+    line-height: 0;
+    top: 9px;
+    left: -5px;
+
+}
+
+/* memberArea 영역 끝 */
+/* twitterArea 영역 시작 */
+#twitterArea{
+    width: 240px;
+    margin-right: 30px;
+    position: relative;
+    margin-top: 15px;
+
+}
+#twitterArea::before{
+    content: "";
+    width: 10px;
+    height: 90%;
+    position: absolute;
+    top: 20px;
+    left: -17px;
+    border-radius: 50%;
+    background:linear-gradient(to right, rgba(251,251,251,0.5) 0%, rgba(229,229,229,0.7) 100%);
+}
+
+#twitterArea >h2 {
+    font-size: 1.2em;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+#twitterArea > h2::before{
+    font-family: "webcafeIcon";
+    content: "t";
+    color: #00acee;
+    font-size: 2em;
+    position: relative;
+    top: 5px;
+    margin-right: 5px;
+}
+
+.twitterArticle{
+    margin: 20px 0;
+
+}
+.twitterArticle img {
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+}
+.twitterArticle p {
+    margin: 10px 0;
+}
+.twitterArticle mark {
+    background-color: transparent;  /* 투명 */
+    font-weight: bold;
+
+}
+
+.twitterDate {
+    color: #787878;
+    display: block;
+    text-align: right;
+}
+
+
+
+
+/* twitterArea 영역 끝 */
