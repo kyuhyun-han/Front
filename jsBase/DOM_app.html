@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델(DOM) 활용</title>
+    <script>
+        let onoff = false;
+        let detail;
+        window.onload = function(){
+            detail = document.querySelector("#content .detail");
+            detail.style.visibility = "hidden";
+        }
+        function showHide(){ // 선언적 함수 ( 호출을 해야 수행 한다 )
+            onoff = !onoff; // 토글방식 
+            if(onoff){
+                detail.style.visibility = "visible";
+            }else{
+                detail.style.visibility = "hidden";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="content">
+        <h2>상품정보</h2>
+        <ul>
+            <li>상품명 : 휴대용 선풍기</li>
+            <li>가격 : 20,000원</li>
+            <li>제조사 : 가나전자</li>
+        </ul>
+        <h3 onclick="showHide();">상품 상세 설명</h3>
+        <p class="detail">
+            소음 무엇보다 타제품보다 소음도 덜한 기분 물론 가장 높은 단계에선 큰편
+        </p>
+    </div>
+</body>
+</html>
