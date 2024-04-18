@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서 객체 모델(DOM : Document Object Model) - 삭제</title>
+    <script>
+        window.onload = function(){
+            // let del = document.getElementById("willRemove")
+            let del = document.querySelector("#willRemove");
+            document.body.removeChild(del);
+            let hd1 = document.querySelector("#head1");
+            hd1.style.color = "orange";
+            hd1.style.backgroundColor = "yellow";
+            hd1.style.border = "2px solid red";
+        }
+    </script>
+</head>
+<body>
+    <h1 id="head1">자바스크립트 DOM 삭제</h1>
+    <h2 id="willRemove">곧 사라지는 객체</h2>
+</body>
+</html>
