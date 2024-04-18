@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>문서 객체 모델(DOM : document Object Model) - 생성</title>
+    <title>문서 객체 모델(DOM : Document Object Model) - 생성</title>
     <script>
         window.onload = function(){
             let head2 = document.createElement("h2"); // 요소생성 (요소이름)
@@ -15,6 +15,11 @@
             image.width=500;
             image.height=350;
             image.alt="펭귄";
+            // 객체에 속성주기 ( setAttribute )
+            image.setAttribute("src","../images/Penguins.jpg");
+            image.setAttribute("width",500);
+            image.setAttribute("height",350);           
+            image.setAttribute("alt","펭귄");
             document.body.appendChild(image);
         }
     </script>
