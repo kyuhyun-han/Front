@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서 객체 모델(DOM : Document Object Model) - 수정2</title>
+    <script>
+        window.onload = function(){
+            let contents = ["반갑습니다.","문서객체모델","파이썬 기초"];
+            // let head = document.getElementsByTagName('h1');
+            // let head = document.getElementsByClassName('header');
+            // let head = document.querySelectorAll("h1");
+            let head = document.querySelectorAll('.header');
+            for(let i =0; i<head.length; i++){
+                head[i].innerHTML = contents[i];
+            }
+            head[0].innerHTML = "반갑습니다";
+        head[1].innerHTML = "반갑습니다";
+        }
+    </script>
+</head>
+<body>
+    <h1 class="header">자바스크립트 DOM 생성</h1>
+    <h1 class="header">브라우저객체 모델</h1>
+    <h1 class="header">파이썬</h1>
+</body>
+</html>
