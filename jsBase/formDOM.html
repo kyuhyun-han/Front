@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼에 관련된 DOM처리</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul{
+            list-style: none;
+        }
+
+        form{
+            width: 520px;
+            height: auto;
+            padding-left: 10px;
+            margin: 50px auto;
+        }
+        fieldset{
+            border: 1px solid #ccc;
+            padding: 30px 20px 30px 30px;
+            margin-bottom: 35px;
+        }
+        legend{
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+        .field{
+            float: left;
+            width: 60px;
+            font-weight: bold;
+            font-size: 0.9em;
+            line-height: 55px;
+            text-align: right;
+            margin-right: 15px;
+        }
+        .input-box{
+            width: 350px;
+            height: 35px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 10px 0;
+            float: left;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            let check = document.querySelector("#shippingInfo");
+            check.addEventListener("click",function(){
+                if(this.checked){
+                    //주문정보 값을 배송정보에 복사해서 이동
+                    /*  방법 1
+                    document.querySelector("#shippingName").value = document.querySelector("#billingName").value;
+                    document.querySelector("#shippingTel").value = document.querySelector("#billingTel").value;
+                    document.querySelector("#shippingAddr").value = document.querySelector("#billingAddr").value; */
+                    document.ship.shippingName.value = document.order.billingName.value;
+                    document.ship.shippingTel.value = document.order.billingTel.value;
+                    document.ship.shippingAddr.value = document.order.billingAddr.value;
+                }else{
+                    //배송정보값을 지우기
+                    /*  방법 1
+                    document.querySelector("#shippingName").value = "";
+                    document.querySelector("#shippingTel").value = "";
+                    document.querySelector("#shippingAddr").value = ""; */
+                    document.ship.shippingName.value = "";
+                    document.ship.shippingTel.value = "";
+                    document.ship.shippingAddr.value = "";
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <form name="order">
+            <fieldset>
+                <legend>주문정보</legend>
+                <ul>
+                    <li>
+                        <label for="billingName" class="field">이름</label>
+                        <input type="text" name="billingName" class="input-box" id="billingName">
+                    </li>
+                    <li>
+                        <label for="billingTel" class="field">연락처 : </label>
+                        <input type="text" name="billingTel" class="input-box" id="billingTel">
+                    </li>
+                    <li>
+                        <label for="billingAddr" class="field">주소 : </label>
+                        <input type="text" name="billingAddr" class="input-box" id="billingAddr">
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+        <form name="ship">
+            <fieldset>
+                <legend>배송정보</legend>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="shippingInfo" name="shippingInfo">
+                        <label for="shippingInfo" class="check">주문 정보와 배송 정보가 같습니다.</label>
+                    </li>
+                    <li>
+                        <label for="shippingName" class="field">이름</label>
+                        <input type="text" name="shippingName" class="input-box" id="shippingName">
+                    </li>
+                    <li>
+                        <label for="shippingTel" class="field">연락처 : </label>
+                        <input type="text" name="shippingTel" class="input-box" id="shippingTel">
+                    </li>
+                    <li>
+                        <label for="shippingAddr" class="field">주소 : </label>
+                        <input type="text" name="shippingAddr" class="input-box" id="shippingAddr">
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
+<!-- 주문정보를 배송정보로가져오기  -->
