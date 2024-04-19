@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리</title>
+    <script src="http://code.jQuery.com/jQuery-latest.min.js"></script>
+    <script>
+        // js 방식
+        /* window.onload = function(){
+            // 방법 1
+            let h = document.querySelectorAll("h1");
+            for(let i=0; i<h.length;i++){
+                h[i].onclick = function(){
+                    this.style.color="red";
+                    this.innerHTML="임무 완료됨!";
+                }
+            } 
+            // 방법 2
+            let h = document.querySelectorAll("h1");
+            for(let i=0; i<h.length;i++){
+                h[i].addEventListener("click",function(){
+                    this.style.color="red";
+                        this.innerHTML="임무 완료됨!";
+                })
+            }
+
+        } */
+
+        // jQuery 방식
+        /* $(function(){  // $뒤에 익명함수 -> document가 준비되었다는 뜻으로 아래와 같다
+            
+        }) */
+        $(document).ready(function(){ // $ : jQuery 식별자 /  ready : window.onload 
+            $('h1').click(function(){   //  js와 다르게 jQuery는 event를 준 태그에 바로 접근이 가능해서 for문으로 접근할 필요가 없다.
+                $(this).css('color','red').html("임무완료됨!")   // 메소드 체인 : 하나의 태그에 메소드를 여러개 사용
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="text">
+    <h1>자바 복습하기</h1>
+    <h1>홈페이지 제작하기</h1>
+    <h1>운동하기</h1>
+</body>
+</html>
