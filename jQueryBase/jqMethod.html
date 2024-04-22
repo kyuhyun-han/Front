@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 ( 메소드 )</title>
+    <style>
+        .high_light{
+            background-color: yellow;
+            color: red;
+            border: 3px solid blue;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function (){
+            $('h1').hover(function(){
+                $(this).addClass('high_light');
+            } ,function(){
+                $(this).removeClass('high_light');
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1 class="high_light">제이쿼리 선택자</h1>
+    <h1>제이쿼리 메소드</h1>
+    <h1>제이쿼리 이벤트</h1>
+    <h1 class="high_light">제이쿼리 애니매이션</h1>
+    <h1>제이쿼리 플러그인</h1>
+    <h1>제이쿼리 실무응용</h1>
+</body>
+</html>
