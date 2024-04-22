@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 ( 선택자 )</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function (){
+            $('#box1>p').css('color','red');
+            $('#box2 p').css('color','red');
+            setTimeout(function(){
+                let choice=$('select>option:selected').val();
+                alert('오늘 점심은 ' + choice + '를(을) 선택');
+            }, 5000);
+        });
+    </script>
+</head>
+<body>
+    <div id="box1">
+        <h2>나는 제목1</h2>
+        <p>자신 선택자</p>
+    </div>
+    <div id="box2">
+        <h2>나는 제목2</h2>
+        <p>후손 선택자</p>
+        <div>
+            <p>
+                나는 손자
+            </p>
+        </div>
+    </div>
+    <select>
+        <option>김치찌개</option>
+        <option>부대찌개</option>
+        <option>비빔밥</option>
+        <option>칼국수</option>
+        <option>냉면</option>
+    </select>
+</body>
+</html>

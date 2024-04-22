@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 ( 선택자 )</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function (){
+            $('h1').hover(function(){  
+                $(this).css({    /* {} 객체 형식으로 속성값을 줄 때  속성은 ' ' 사용하지 않기 때문에 변수로 사용 불가 ( 값은 가능 ) */
+                    color:'red',
+                    background : 'yellow',
+                    border : '3px solid blue'
+                });
+            },function(){
+                /* $(선택자).메소드(내용).메소드(내용).메소드(내용)... ;  하나의 선택자에 메소드를 여러개 연결한 형식 - 메소드 체이닝   */
+                $(this).css({
+                    color : '#000',
+                    background : '#fff',
+                    border : 'none'
+                })
+                .html("완료!")
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>제이쿼리</h1>
+    <h1>파이썬</h1>
+    <h1>라이브러리</h1>
+</body>
+</html>

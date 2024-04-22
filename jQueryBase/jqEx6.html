@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 ( 선택자 )</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function (){
+            /* $('li:even').css('background','#0f0');
+            $('li:odd').css('background','#0ff'); */
+            $('li:first').css('background','#0f0');
+            $('li:last').css('background','#0ff');
+            $('tr:odd').css('background','#cef279');
+            $('tr:even').css('background','#ffb2d9');
+            $('tr:first').css('background','#000').css('color','#fff');
+        });
+    </script>
+</head>
+<body>
+    <h2>동물의 세계</h2>
+    <ul>
+        <li>사자</li>
+        <li>코끼리</li>
+        <li>표범</li>
+        <li>거북이</li>
+        <li>기린</li>
+        <li>악어</li>
+        <li>독수리</li>
+    </ul>
+    <h2>혈액형 조사</h2>
+    <table>
+        <tr><th>이름</th><th>혈액형</th><th>지역</th></tr>
+        <tr><td>김철수</td><td>O형</td><td>서울시 용산구</td></tr>
+        <tr><td>이영희</td><td>A형</td><td>서울시 중구</td></tr>
+        <tr><td>홍길동</td><td>AB형</td><td>서울시 영등포구</td></tr>
+        <tr><td>박찬호</td><td>A형</td><td>서울시 종로구</td></tr>
+        <tr><td>손흥민</td><td>B형</td><td>서울시 깅님구</td></tr>
+    </table>
+</body>
+</html>
