@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 배열</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <style>
+        .high_light_0{
+            background-color: yellow;
+        }
+        .high_light_1{
+            background-color: orange;
+        }
+        .high_light_2{
+            background-color: red;
+        }
+        .high_light_3{
+            background-color: green;
+        }
+        .high_light_4{
+            background-color: blue;
+        }
+    </style>
+    <script>
+        $(function (){
+            // 태그에 직접 주지 않고 동적으로 style 주기
+            
+            /* for(let i=0; i<5; i++){  h1태그의 순서를 for으로 정하기
+                $('h1:eq(' + i +')').addClass('high_light_'+ i);
+            } */
+            /* $('h1').each(function (index){   jquery의 each메소드사용하기
+                $(this).addClass('high_light_' + index);
+            }); */
+            /* let head = document.querySelectorAll('h1');
+            for(let i =0; i<head.length; i++){   h1태그를 가져와서 for문으로 정하기
+                $(head[i]).addClass('high_light_' + i);
+            } */
+
+            $('h1').addClass(function(index){   // each메소드를 사용하지 않고 addClass로 각각의 h1태그에 값 리턴
+                return 'high_light_' + index;
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>제이쿼리 선택자</h1>
+    <h1>제이쿼리 메소드</h1>
+    <h1>제이쿼리 이벤트</h1>
+    <h1>제이쿼리 애니메이션</h1>
+    <h1>제이쿼리 실무응용</h1>
+</body>
+</html>

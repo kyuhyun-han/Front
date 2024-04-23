@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 배열</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    
+    <script>
+        $(function (){
+            let c = ['yellow','orange','red','green','blue'];
+            let head = document.querySelectorAll('h1');
+            for(let i =0; i<head.length; i++){
+                head[i].style.color =c[i];
+            }
+            /* $('h1').css('color',function(index){  // 태그가 여러개일때는 index를 가질 수 있다.
+                return c[index];
+            }); */
+        });
+    </script>
+</head>
+<body>
+    <h1>제이쿼리 선택자</h1>
+    <h1>제이쿼리 메소드</h1>
+    <h1>제이쿼리 이벤트</h1>
+    <h1>제이쿼리 애니메이션</h1>
+    <h1>제이쿼리 실무응용</h1>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 배열</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <style>
+        .high_light_0{
+            background-color: yellow;
+        }
+        .high_light_1{
+            background-color: orange;
+        }
+        .high_light_2{
+            background-color: red;
+        }
+        .high_light_3{
+            background-color: green;
+        }
+        .high_light_4{
+            background-color: blue;
+        }
+    </style>
+    <script>
+        $(function (){
+            /* index()를 사용하여 이벤트 메소드에 index를 준 방식 */
+            let index;
+            $('h1').hover(function(){
+                index = $(this).index();
+                $(this).addClass('high_light_' + index);
+                },function(){
+                    $(this).removeClass('high_light_' + index);
+                });
+
+            /* each로 반복 hover가 index 만큼생긴다. */
+            $('h1').each(function(index){
+                $(this).hover(function(){
+                    $(this).addClass('high_light_' + index);
+                },function(){
+                    $(this).removeClass('high_light_' + index);
+                }
+            )
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1>제이쿼리 선택자</h1>
+    <h1>제이쿼리 메소드</h1>
+    <h1>제이쿼리 이벤트</h1>
+    <h1>제이쿼리 애니메이션</h1>
+    <h1>제이쿼리 실무응용</h1>
+</body>
+</html>
