@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 ( 메소드 )</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function (){
+            let content = ["안녕하세요","파이팅"];
+            /* $('h1').click(function(event){ 
+                if(event.shiftKey){
+                    alert("잘가세요");
+                }else{
+                    alert("안녕하세요");
+                }
+            }); */
+            let index;
+            $('h1').click(function(){
+                index=$(this).index();
+                alert(content[index]);
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1>인사하기</h1>
+    <h1>대한민국</h1>
+</body>
+</html>
+
+<!-- 일반 메소드와 이벤트 메소드 
+
+    일반 메소드는 index를 가질 수 있다
+
+    이벤트 메소드는 동작 메소드로  ()안에 event 를 갖기 때문에 index를 가질 수 없다.
+    index()메소드를 사용하여 가질 수 있다.  index() 는 ()안에 내용이 없다.
+
+-->
