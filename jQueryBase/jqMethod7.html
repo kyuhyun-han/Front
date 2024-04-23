@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 ( 속성 메소드2 ) attr()</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function (){
+            /* $('img').hover(function(){
+                $(this).attr('src','../images/box2.png');
+            },function(){
+                $(this).attr('src','../images/box1.png');
+            }); */
+
+            // 효율적 풀이
+            
+            //let oldImage = ['box1.png','lightbulb1.png','우는사람.png'];  배열을 만들 필요없다. 
+            let oldImage
+            let newImage = ['box2.png','lightbulb.png','웃는사람.png'];
+            let index;
+            $('img').hover(function(){
+                index=$(this).index();
+                oldImage = $(this).attr('src');
+                $(this).attr('src','../images/'+newImage[index]);
+            },function(){
+                //$(this).attr('src','../images/'+oldImage[index]);
+                $(this).attr('src','oldImage');
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1>제이쿼리 메소드</h1>
+    <img src="../images/box1.png" alt="박스">
+    <img src="../images/lightbulb1.png" alt="전등">
+    <img src="../images/우는사람.png" alt="우">
+</body>
+</html>
+
+
+<!-- 예제 hover 이미지 변경하기 -->
+
+<!--     이미지의 갯수가 작으면 상관없지만 많을 경우 비효율적이다.
+    $('img').each(function(index){
+    if(index== 0){
+        $(this).hover(function(){
+            $(this).attr('src','../images/box2.png');
+        },function(){
+            $(this).attr('src','../images/box1.png');
+        });
+    }else if(index == 1){
+        $(this).hover(function(){
+            $(this).attr('src','../images/lightbulb.png');
+        },function(){
+            $(this).attr('src','../images/lightbulb1.png');
+        });
+    }else {
+        $(this).hover(function(){
+            $(this).attr('src','../images/웃는사람.png');
+        },function(){
+            $(this).attr('src','../images/우는사람.png');
+        });
+    }
+}) 
+ -->
+
+
