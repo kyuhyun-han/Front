@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 ( 메소드 )</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function (){
+            let color = ['yellow','orange','green','red','gray','blue'];
+                $('h1').css('background',function(index){
+                    return color[index];
+                });
+            /* for(let i=0; i<color.length; i++){
+                $('h1:eq('+ i + ')').css('background',color[i]);
+            } */
+            for(let i=0; i<color.length; i++){
+                $('h1').eq(i).css('background','color[i]');
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>제이쿼리 선택자</h1>
+    <h1>제이쿼리 메소드</h1>
+    <h1>제이쿼리 이벤트</h1>
+    <h1>제이쿼리 애니메이션</h1>
+    <h1>제이쿼리 플러그인</h1>
+    <h1>제이쿼리 실무응용</h1>
+</body>
+</html>
