@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 (dblclick 이벤트 )</title>   
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            /* $('h1').on('dblclick',function(){ // 더블클릭이벤트
+                alert('안녕하세요');
+            }); */
+            let count = 0;
+            $('h1').on('click',function(){ // on = addEventListener 같음 / jQuery는 js 라이브러리기 떄문에 결국 브라우저에서는 addEventListener로 변경된다
+                alert("안녕하세요");
+                count++;
+                if(count == 3){
+                    $(this).off();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>클릭</h1>
+</body>
+</html>
