@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $('.list3').parent().css('border', '2px solid red'); //list3의 직속부모 ul에 보더를 넣어줌
+            $('#box1>section').children().css({ //section의 자식에 css 적용
+                backgroundColor: 'yellow',
+                color:'red',
+                border:'2px solid #00f'
+            })
+            $('.list3').next().css('border', '2px solid red'); //바로 밑에 동생(리스트4)에 css 적용
+            $('.list3').nextAll().css('border', '2px solid red'); //바로 밑에 모든동생(리스트4,리스트5)에 css 적용
+            $('.list3').prev().css('border', '2px solid red'); //바로 위에 형(리스트2)에 css 적용
+            $('#box1>h1').nextUntil('p').css('border', '2px solid red'); //나 밑에부터 p태그 나오기 전까지 css 적용
+            $('.list3').siblings().css('background', 'yellow'); //나 제외 모든 형제들에 css 적용
+            $('#box1').find('.list3').css('border','2px solid red'); //클래스 이름이 list3인 애들을 모두 찾음
+        });
+    </script>
+</head>
+
+<body>
+    <div id="box1">
+        <h1>메서드 형태 선택자</h1>
+        <ul>
+            <li>리스트1</li>
+            <li>리스트2</li>
+            <li class="list3">리스트3</li>
+            <li>리스트4</li>
+            <li>리스트5</li>
+        </ul>
+        <p>나는 단락</p>
+        <section>
+            <h2>나는 섹션 제목</h2>
+            <p>나는 섹션</p>
+        </section>
+    </div>
+
+</body>
+
+</html>

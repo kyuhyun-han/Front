@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function (){
+            $('img').click(function () {
+                $(this).removeAttr('width');
+            });
+            //let co = $('h1').css('color'); //값을 반환
+            //$('h1').css('color','red'); //값을 바꿈
+            let co=['red','green','blue']
+            $('h1').css({ //객체로 표현
+                color : function (index) {
+                    return co[index];
+                },
+                backgroundColor:'yellow'
+            });
+            let content=$('h1').html(); //메소드에 값이 안들어 있으면 h1의 문자값을 가져와서 content에다 넣어줌
+            alert(content);
+            $('h1').html('지금 배우는 중...'); //h1의 문자값을 변경해줌, innerHTML이란 같은 역할
+            //$('#box').html('<h1>오늘은 수요일</h1>'); //html은 html자체로 들어가서 마크업도 인식하지만,
+            $('#box').text('<h1>오늘은 수요일</h1>'); //text는 마크업도 문자로 취급되어 텍스트로 들어간다
+        });
+    </script>
+</head>
+<body>
+    <img src="../images/Koala.jpg" alt="코알라" width="200"> 
+    <h1>제이쿼리 선택자</h1>
+    <h1>제이쿼리 메서드</h1>
+    <h1>제이쿼리 이벤트</h1>
+</body>
+</html>

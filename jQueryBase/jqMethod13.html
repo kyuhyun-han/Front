@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            //$(선택자).메서드(내용);
+            $('<h2>남극펭귄</h2>').appendTo('#festival'); //appendTo 쓰면 뒤에거가 선택자, 앞에거가 생성할 내용 , appendTo는 추가해준다는 개념
+            $('<img>').attr({ //attr : 속성값 추가
+                src:'../images/Penguins.jpg',
+                width:500,
+                height:350
+            }).appendTo('#festival');
+            let content=['오늘은 수요일','문서객체생성수업','조건문과 제어문'];
+            for(let i=0; i<content.length; i++) {
+                $('<p></p>').html(content[i]).appendTo('#festival');
+            }
+            $('<h1>여름축제</h1>').prependTo('#festival'); //앞에 추가
+            $('<h2>나는 어디에 추가될까?</h2>').insertAfter('#festival'); //insertAfter는 영역 뒤에 추가(div 뒤에 추가됨), appendTo와 pretendTo는 영역 안에서 추가됨
+            //사실은 body 뿐만 아니라 문서 전체(head 포함)가 DOM임, body 밖으로도 뭔가 추가하는게 가능은 하다는것임
+            $('<h2>나는 외톨이</h2>').insertBefore('body'); //얘는 바디 앞에 추가됨, body 밖에 나가 있으므로 제어가 힘들고 모양이 이상함. 브라우저에 보여지긴 하는데 이렇게는 쓰지 않음.
+        });
+    </script>
+</head>
+
+<body>
+    <h1>문서객체생성</h1>
+    <div id="festival"></div>
+</body>
+
+</html>

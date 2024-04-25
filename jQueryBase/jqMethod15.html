@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리</title>
+    <style>
+        #images{
+            width: 250px;
+            height: 190px;
+            overflow: hidden;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+            let imgre;
+        $(function () {
+            $('#images>img').css('width','100%');
+            move();
+            $('#images').hover(function(){
+                clearInterval(imgre); 
+            },function(){
+                move();
+            });
+            $('.stop').click(function(){ 
+                clearInterval(imgre);           // 변수에 담은 setInterval을 clearInterval로 실행 종료 가능
+            });
+            $('.start').click(function(){
+                move();
+            })
+            function move(){
+                imgre = setInterval(function (){     // setInterval 을 멈추기 위해서 변수에 담아서 이름을 준다.
+                $('#images>img').first().appendTo('#images') // first() : 선택된 태그중 맨처음 것을 고르는 메소드 = eq(0)
+            },2000);
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <h1>문서객체생성</h1>
+    <div id="images">
+        <img src="../images/Koala.jpg" alt="">
+        <img src="../images/Tulips.jpg" alt="">
+        <img src="../images/Lighthouse.jpg" alt="">
+        <img src="../images/Penguins.jpg" alt="">
+        <img src="../images/Jellyfish.jpg" alt="">
+    </div>
+    <button class="start">시작</button>
+    <button class="stop">중지</button>
+</body>
+
+</html>

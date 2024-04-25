@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리</title>
+    <style>
+        #room {
+            width: 600px;
+            height: 700px;
+            border: 3px solid black;
+            text-align: center;
+            display: inline-block;
+            background-color: #000;
+        }
+        #room img{
+            opacity: 0;
+        }
+        .sw {
+            vertical-align: bottom  ;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function (){
+            let sw=false;
+            $('.sw').click(function () {
+                sw=!sw;
+                if(sw) {
+                    $(this).attr('src','../images/light-switch.png'); //attr : 속성값 추가
+                    $('#room').css('backgroundColor','#fff');
+                    $('#room img').css('opacity',1);
+                }else {
+                    $(this).attr('src','../images/light-switch1.png');
+                    $('#room').css('backgroundColor','#000');
+                    $('#room img').css('opacity',0);
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="room">
+        <img src="../images/귀신.jpg" alt="귀신">
+    </div>
+    <img class="sw" src="../images/light-switch1.png" alt="전등">    
+</body>
+</html>
