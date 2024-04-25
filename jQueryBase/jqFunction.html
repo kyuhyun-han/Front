@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        // 사용자 정의 함수
+        function hello(){
+            alert("안녕하세요");
+        }
+        // 내장 함수 
+        setTimeout(() => {
+            alert("안녕하세요");
+        }, 5000);
+
+        /* function add(a,b){
+            return a+b;
+        } */
+        const add = (a,b) =>{
+            return a+b;
+        }
+
+
+        result = add(10,40);
+        alert(result);
+    </script>
+</head>
+<body>
+    <h1>자바스크립트</h1>
+</body>
+</html>
