@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 ( mousedown, up, move 이벤트 )</title>  
+    <style>
+        #canvas {
+            border: 3px solid black;
+            margin-top: 10px;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            let sw = false;
+
+            let can = document.getElementById('canvas'); // canvas 태그는 jQuery가 지원x document로 직접 가져와야 한다.
+            let context = can.getContext('2d');
+            let position, x, y;
+            let lineWidth = 1;
+            $('select').change(function(){      // 글씨 크기 변경하기 
+                lineWidth=$('select>option:selected').val();
+            });
+            $(can).on({     // can은 변수이기 때문에 ' ' 사용 x
+                mousedown : function(e){
+                    sw = true;
+                    console.log("캔버스 위에서 마우스를 눌렀습니다.");
+                    position=$(this).offset(); // offset() 위치값을 가져오는 메소드
+                    x = event.pageX-position.left;
+                    y = event.pageY-position.top;
+                    context.beginPath();
+                    context.moveTo(x,y);
+                },
+                mousemove : function(e){
+                    if(sw == true){
+                        console.log("캔버스 위에서 마우스를 누른상태에서 돌아다닌다.")
+                        position=$(this).offset(); 
+                        x = event.pageX-position.left;
+                        y = event.pageY-position.top;
+                        context.lineWidth = lineWidth;  // 글씨크기
+                        context.lineTo(x,y);
+                        context.stroke();
+                    }else{
+                        console.log("캔버스 위에서 마우스를 뗀상태에서 돌아다닌다.")
+                    }
+                },
+                mouseup : function(e){
+                    sw = false;
+                    console.log("캔버스 위에서 마우스를 뗐습니다.")
+                }
+            });    
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <strong>낙서장</strong>
+        <span>붓의 두께</span>
+        <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>9</option>
+            <option>15</option>
+            <option>20</option>
+        </select>
+        <span>붓의 색상</span>
+        <input type="color" class="colorChange">
+    </div>
+    <canvas id="canvas" width="800" height="500"></canvas>
+</body>
+</html>
