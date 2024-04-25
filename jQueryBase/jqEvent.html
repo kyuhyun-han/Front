@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 ( on 이벤트 )</title>
+    <style>
+        .reverse{
+            background-color: #000;
+            color: #fff;
+
+        }
+    </style>    
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            /* $('h1').on('click',function(){      // on(이벤트이름, 함수);  여러개의 이벤트를 사용할 수 있다. , ※이벤트 연결메소드※ , 새로만들객체까지 이벤트를 연결 가능
+                $(this).html(function(index,html){  // index의 html(글자)를 가져온다.
+                    return html + '♥';
+                });
+            });   
+            $('h1').hover(function(){
+                $(this).addClass('reverse');
+            },function(){
+                $(this).removeClass('reverse');
+            }); */
+
+            // 위의 메소드를 on으로 한번에 연결
+
+            $('h1').on({    // 여러개의 이벤트를 담을 때 {} 안에 사용 
+                mouseenter : function(){
+                    $(this).addClass('reverse');
+                }, // 외부에서 객체안으로 들어가는 것 ( hover 첫 메소드)  
+                mouseleave : function(){
+                    $(this).removeClass('reverse');
+                }, // 객체에서 외부로 빠져나오는 것 ( hover 두번째 메소드)
+                click : function(){
+                    $(this).html(function(index,html){  // index의 html(글자)를 가져온다.
+                    return html + '♥';
+                });
+                }
+            }); 
+        });
+    </script>
+</head>
+<body>
+    <h1>김철수-</h1>
+    <h1>홍길동-</h1>
+</body>
+</html>
