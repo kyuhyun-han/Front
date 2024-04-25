@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 ( 이벤트 예제풀이 )</title>  
+    <style>
+        h1 {
+            cursor: pointer;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            let count =[5,2,3];
+            let name = ['냉장고','에어컨','세탁기'];
+            let index;
+            $('h1').on('click', function(){
+                index = $(this).index();
+                alert('구입해주셔서 고맙습니다.');
+                count[index]--;
+                if(count[index] == 0){
+                    alert("완판되었습니다.");
+                    $(this).html(name[index] + "완판!!");
+                    $(this).off();
+                    $(this).css({
+                        cursor : 'default',
+                        color : '#ccc'
+                    })
+                }else{
+                    alert("서둘러주세요 이제 남은 수량은 " + count[index] +"대 입니다.");
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1>냉장고 판매중</h1>
+    <h1>에어컨 판매중</h1>
+    <h1>세탁기 판매중</h1>
+</body>
+</html>
+<!-- 냉장고 5대, 에어컨2대 세탁기3대 해당 제품을 클릭하면 alert()로 '구입해주셔서 고맙습니다.' , '서둘러 주세요 이제 남은 수량은 ??대 입니다.' 판매가 완료되면 알림창으로
+완판 되었습니다. 출력이 되고 냉장고 판매중 -> 냉장고 완판-->
