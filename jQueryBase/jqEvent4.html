@@ -10,6 +10,12 @@
             border: 3px solid black;
             margin-top: 10px;
         }
+        .clear {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #ccc;
+        }
     </style>
     <script src="js/jquery-3.7.1.min.js"></script>
     <script>
@@ -19,10 +25,40 @@
             let can = document.getElementById('canvas'); // canvas 태그는 jQuery가 지원x document로 직접 가져와야 한다.
             let context = can.getContext('2d');
             let position, x, y;
-            let lineWidth = 1;
+            let oldColor, oldLineWidth; // 지우개를 선택 후 해제시 원래 색, 크기로 돌아오는 변수
+            let lineWidth = 1; // 붓 크기
+            let color = '#000'; // 색
+            let clearSW = false; // 지우개
+
+            $('button').click(function(){
+                can.width = can.width; // 새로고침 기존 location을 같은 location에 담는다.
+            });
+
+            $('.clear').click(function(){
+                clearSW = !clearSW;
+                if(clearSW){
+                    $(this).css('border','3px solid #000');
+                    $(can).css('cursor','grabbing');
+                    oldColor = color; // 이전 색상 담기
+                    oldLineWidth = lineWidth; // 이전 크기 담기
+                    color='#fff';   // 지우개 색
+                    lineWidth=30;   // 지우개 크기
+                }else{
+                    $(this).css('border','3px solid #ccc');
+                    $(can).css('cursor','default');
+                    color = oldColor;
+                    lineWidth = oldLineWidth;
+                }
+            });
+
             $('select').change(function(){      // 글씨 크기 변경하기 
                 lineWidth=$('select>option:selected').val();
             });
+
+            $('.colorChange').change(function(){    // 선 색깔 변경하기
+                color = $(this).val();
+            });
+
             $(can).on({     // can은 변수이기 때문에 ' ' 사용 x
                 mousedown : function(e){
                     sw = true;
@@ -40,6 +76,7 @@
                         x = event.pageX-position.left;
                         y = event.pageY-position.top;
                         context.lineWidth = lineWidth;  // 글씨크기
+                        context.strokeStyle = color;  // 색깔
                         context.lineTo(x,y);
                         context.stroke();
                     }else{
@@ -72,6 +109,9 @@
         </select>
         <span>붓의 색상</span>
         <input type="color" class="colorChange">
+        <span>지우개</span>
+        <div class="clear"></div>
+        <button>새 도화지</button>
     </div>
     <canvas id="canvas" width="800" height="500"></canvas>
 </body>
