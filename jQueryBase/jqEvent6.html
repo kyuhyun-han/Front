@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리</title>   
+    <style>
+        *{
+            margin: 5px;
+            padding: 5px;
+            border: 3px solid #000;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $('a').click(function(event){
+                $(this).css('background-color','blue');
+                /* event.preventDefault(); // 기본 이벤트 제거 -> a태그 이동 x
+                event.stopPropagation(); // 이벤트 전달을 제거 -> 자식태그클릭시 부모태그 적용 x */
+                return false; // 위 두가지를 한번에 할 수 있다.
+            });
+            $('h1').click(function(){       // eventbubbling : 자식태그 선택시 부모태그도 적용
+                $(this).css('background-color','red');
+            }); 
+        });
+    </script>
+</head>
+<body>
+    <h1>
+        <a href="http://www.naver.com">네이버</a>
+    </h1>
+</body>
+</html>
+
