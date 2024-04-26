@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 trigger() 메소드</title>   
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            let stop1, stop2;
+
+            $('h1').on('click',function(){
+                $(this).html(function(index,html){
+                    return html + "★";
+                })
+            });
+            stop2 = setTimeout(function(){
+                alert("안녕하세요");
+            },5000);
+            // 이벤트를 강제 발생시키는 메소드
+            stop1 = setInterval(() => {
+                $('h1').last().trigger('click'); // trigger(이벤트명) 이벤트를 강제 발생
+            }, 5000);
+            $('button').click(function(){
+                clearInterval(stop1);
+                clearTimeout(stop2);
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <button>중지</button>
+    <h1>홍길동</h1>
+    <h1>김철수</h1>
+</body>
+</html>
