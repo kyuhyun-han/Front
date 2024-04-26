@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리</title>   
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            // 현재 존재하는 객체만 이벤트를 발생
+            $('h1').on('click',function(){
+                let len = $('h1').length; // 선택자의 갯수 length
+                let targetHtml = $(this).html();
+                $('#wrap').append('<h1>' + len + '-' + targetHtml + '</h1>'); // append() : 태그의 안에 ()안의 값 뒤에 추가
+            });
+            // 현재뿐만 아니라 미래에 존재할 객체까지도 이벤트를 발생
+            $('#wrap').on('click','h1',function(){
+                let len = $('h1').length; 
+                let targetHtml = $(this).html();
+                $('#wrap').append('<h1>' + len + '-' + targetHtml + '</h1>');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <h1>메르스</h1>
+    </div>
+</body>
+</html>
+
