@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 애니메이션</title>   
+    <style>
+        
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $('.b1').click(function(){
+                $('.news').show(3000,function(){  // callback함수 ( 익명 함수 )
+                    alert('이상 이강인 소식이었습니다.');
+                });
+            });
+            $('.b2').click(function(){
+                $('.news').hide('normal');
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <h1>애니메이션</h1>
+    <button class="b1">뉴스보기</button>
+    <button class="b2">뉴스감추기</button>
+    <div class="news">
+        <h2>프랑스 리그1 3연패 기여 이강인, 23세 빅리그 우승으로 韓 레전드 기록 경신했다</h2>
+        <p>파리생제르맹(PSG) 프랑스 프로축구 리그1 3연패를 확정했다. 이강인은 23세의 나이에 빅리그 우승을 거두며 한국 축구 레전드 선배들의 기록을 경신했다.</p>
+        <p>이강인이 PSG에서 치른 첫 시즌만에 우승 트로피를 들었다. PSG는 29일(한국시간) AS 모나코가 올랭피크 리옹과의 2023-24 리그1 31라운드 원정 경기서 2-3으로 패하면서 조기 우승을 확정했다.</p>
+    </div>
+</body>
+</html>
+
+<!-- show메소드 : 객체를 크게 하며 보여준다.
+    hide메소드 : 객체를 작게 하며 사라진다. 
+    toggle메소드 : toggle() show,hide를 가진 함수
+    $(선택자).show();  
+    $(선택자).show(speed);  fast, normal, slow, 숫자(1000 = 1초)
+    $(선택자).show(speed,easing); easing : 가속도
+    $(선택자).show(speed,easing,callback); 
+
+    callback : 선택자에 애니메이션을 수행하고 난 뒤에 수행할 함수를 지정하는 것
+
+-->

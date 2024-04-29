@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 애니메이션</title>   
+    <style>
+        
+        .images img{
+            width: 500px;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $('.b1').click(function(){
+                $('.images').show('normal'); // display:none 을 보기로 변경  .css('display':'block') 와 같음
+            });
+            $('.b2').click(function(){
+                $('.images>img').hide(5000,function(){
+                    $(this).css('display','block');
+                    $('.images >img').attr('src','../images/boy.png');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>애니메이션</h1>
+    <button class="b1">이미지보기</button>
+    <button class="b2">이미지감추기</button>
+    <div class="images">
+        <img src="../images/Penguins.jpg" alt="Penguins">
+    </div>
+</body>
+</html>
+

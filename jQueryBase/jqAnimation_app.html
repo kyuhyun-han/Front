@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 애니메이션</title>   
+    <style>
+        #person{
+            position: relative;
+        }
+        #person > img {
+            position: absolute;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $('button').click(function(){
+                console.log("!!")
+                $('#person > img').eq(2).fadeOut(5000,function(){
+                    $('#person > img').eq(1).fadeOut(5000)
+                });
+            });
+            $('.re').click(function(){
+                $('#person > img').eq(1).fadeIn(5000,function(){
+                    $('#person > img').eq(2).fadeIn(5000)
+                });
+            })
+        });
+    </script>
+</head>
+<body>
+    <button>나의 성장 모습</button>
+    <button class="re">원래대로</button>
+    <div id="person">
+        <img src="../images/송해.jpg" alt="">
+        <img src="../images/호동.jpg" alt="">
+        <img src="../images/형돈.jpg" alt="">
+    </div>
+</body>
+</html>
