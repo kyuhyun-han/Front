@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 윈도우 이벤트</title>   
+    <style>
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            /* $(window).resize(function(){
+                alert("창의 크기 변경")
+            }); */
+
+            for(let i=0; i<25; i++){
+                $('<h1>무한 스크롤 체험</h1>').appendTo('body');
+            }
+            //무한 스크롤
+            $(window).scroll(function(){
+                let scrollHeight = $(window).scrollTop() + $(window).height();
+                //console.log(scrollHeight);
+                let documentHeight = $(document).height();
+                if(scrollHeight >= documentHeight - 200){
+                    for(let i=0; i<25; i++){
+                        $('<h1>무한 스크롤 체험</h1>').appendTo('body');
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>윈도우 이벤트</h1>
+</body>
+</html>
+
