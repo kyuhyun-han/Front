@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 이벤트 응용</title>   
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            let baseFont = 16;
+            $('#zoom button').on('click',function(){
+                if($(this).hasClass('zoomout')){
+                    if(baseFont <= 8) return false; // 이벤트 종료
+                    baseFont--;
+                }else if($(this).hasClass('zoomin')){
+                    if(baseFont >= 30) return false;
+                    baseFont++;
+                }else{
+                    baseFont = 16;
+                }
+                $('.font').text(baseFont+'px');
+                $('#wrap').css('fontSize',baseFont);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="zoom">
+        <button class="zoomout">-</button>
+        <button class="base">100%</button>
+        <button class="zoomin">+</button>
+    </div>
+    <p class="font">16px</p>
+    <div id="wrap">
+        <p>파리생제르맹(PSG) 프랑스 프로축구 리그1 3연패를 확정했다. 이강인은 23세의 나이에 빅리그 우승을 거두며 한국 축구 레전드 선배들의 기록을 경신했다.</p>
+        <p>이강인이 PSG에서 치른 첫 시즌만에 우승 트로피를 들었다. PSG는 29일(한국시간) AS 모나코가 올랭피크 리옹과의 2023-24 리그1 31라운드 원정 경기서 2-3으로 패하면서 조기 우승을 확정했다.</p>
+        <p>현재 승점 70점으로 PSG가 단독 선두를 질주하고 있는 가운데, 남은 경기 전패를 하고 모나코가 남은 3경기서 전승을 하더라도 현재 승점 58점으로는 PSG를 넘어서지 못하게 됐다.</p>
+    </div>
+</body>
+</html>
+
