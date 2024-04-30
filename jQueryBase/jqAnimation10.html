@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 사용자 정의 애니메이션</title>   
+    <style>
+        div{
+            width: 50px;
+            height: 50px;
+            background-color: orange;
+            position: relative;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $('button').click(function(){
+                $('div').each(function (index){
+                    $(this).delay(index*500).animate({
+                        left : 1000
+                    },'slow');
+                });
+                $('div').animate({
+                    left:1000
+                },'slow');
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>출발</button>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
+
+<!-- 사용자 정의 애니메이션
+    $(선택자).animate(object);
+    $(선택자).animate(object,speed);
+    $(선택자).animate(object,speed,easing);
+    $(선택자).animate(object,speed,easing,callback);
+-->
