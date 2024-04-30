@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 사용자 정의 애니메이션</title>   
+    <style>
+        img{
+            width: 74px;
+            height: 42px;
+            cursor: pointer;
+            position: relative;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $('img').click(function(){
+                $(this).animate({
+                    left:1000
+                },5000).animate({
+                    left:0
+                },5000);
+            });
+            $('button').click(function(){ 
+                $('img').stop(); /* stop(true) : queue까지 비운다.*/ 
+            })
+        });
+    </script>
+</head>
+<body>
+    <button>중지</button>
+    <img src="../images/car_green.jpg" alt=""><br>
+</body>
+</html>
