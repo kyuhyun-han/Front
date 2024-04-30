@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 사용자 정의 애니메이션</title>   
+    <style>
+        img{
+            width: 37px;
+            height: 21px;
+            cursor: pointer;
+            position: relative;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $('img').click(function(){
+                $(this).animate({
+                    left:'+=50'
+                },2000).animate({
+                    width:'+=37'
+                },2000).animate({
+                    height:'+=21'
+                },2000);
+            });
+            $('button').click(function(){ /* 여러메소드를 실행할 때 하나의 메소드가 실행될 때 나머지 메소드는 큐에 저장되어 있다. */
+                $('img').clearQueue();      /* 따라서 메소드가 실행중일 때 clearQueue() 실행하면 남은 메소드를 실행 하지 않는다. */
+            })
+        });
+    </script>
+</head>
+<body>
+    <button>큐(Queue) 비우기</button>
+    <img src="../images/car_green.jpg" alt=""><br>
+</body>
+</html>
+
+<!-- 사용자 정의 애니메이션
+    $(선택자).animate(object);
+    $(선택자).animate(object,speed);
+    $(선택자).animate(object,speed,easing);
+    $(선택자).animate(object,speed,easing,callback);
+-->
