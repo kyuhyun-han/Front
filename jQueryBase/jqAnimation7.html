@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 사용자 정의 애니메이션</title>   
+    <style>
+        img{
+            width: 37px;
+            height: 21px;
+            cursor: pointer;
+
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $('img').click(function(){
+                let w = parseInt($(this).css('width')); /* width를 가져올때 단위 까지 가져와서 animate의 연산이 문자열 + 숫자가 된다. */
+                let h = parseInt($(this).css('height')); /* parseInt로 숫자만 변수에 담아 연산을한다. */
+                // $(this).animate({ /* 값 누적하기 */
+                //     width:w+37,
+                //     height:h+21
+                // },1000);
+                // $(this).animate({
+                //     width: '+=37',  /* 복합대입연산자는 형변환 없이 알아서 연산을 한다. */
+                //     height:'+=21'
+                // },1000)
+                if(event.shiftKey){
+                    $(this).animate({
+                    width: '-=37',  
+                    height:'-=21'
+                },1000)
+                }else{
+                    $(this).animate({
+                    width: '+=37',  
+                    height:'+=21'
+                },1000)
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <img src="../images/car_green.jpg" alt=""><br>
+</body>
+</html>
+
+<!-- 사용자 정의 애니메이션
+    $(선택자).animate(object);
+    $(선택자).animate(object,speed);
+    $(선택자).animate(object,speed,easing);
+    $(선택자).animate(object,speed,easing,callback);
+-->
