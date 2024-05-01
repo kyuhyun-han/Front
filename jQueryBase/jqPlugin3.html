@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 PlugIn</title>   
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <style>
+        img{
+            position: relative;
+        }
+
+    </style>
+    <script>
+        $(function () {
+            let sw = false;
+            let posLeft,posTop;
+            $('img').on({
+                mousedown : function(e){
+                    sw = true;
+                    posLeft=e.offsetX; // 마우스 수평좌표
+                    posTop=e.offsetY; // 마우스 수직좌표
+                    e.preventDefault(); // 이벤트를 명시적으로 처리하지 않은 경우, 이벤트를 수행 하지 않도록 한다.
+                },
+                mousemove : function(e){
+                    console.log("자동차 위에서 마우스 움직임")
+                    if(sw == true){
+                        let x = e.pageX-posLeft;
+                        let y = e.pageY-posTop;
+                        $(this).css({
+                            left:x,
+                            top:y
+                        })
+                        e.preventDefault();
+                    }
+                },
+                mouseup : function(e){
+                    sw=false;
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="inner_fade">
+        <img src="../images/car_green.jpg" alt="">
+        <h2>움직일까?</h2>
+    </div>
+</body>
+</html>
+
