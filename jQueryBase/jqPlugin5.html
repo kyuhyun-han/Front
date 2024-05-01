@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 PlugIn</title>   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <style>
+        img{
+            position: relative;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            border-radius: 50%;
+            position: relative;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script> <!-- 가속도효과 제공 -->
+    <script>
+        $(function () {
+            $('img').click(function(){
+                $(this).animate({
+                    left:1000
+                },5000,'easeOutElastic').animate({
+                    left:0
+                },3000,'easeOutElastic');
+            });
+            $('div').click(function(){
+                $(this).animate({
+                    top:500
+                },2000,'easeOutBounce',function(){
+                    $(this).delay(2000).animate({
+                        top:0
+                    },10)
+                });
+            })
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+    <img src="../images/car_green.jpg" alt="">
+</body>
+</html>
+
