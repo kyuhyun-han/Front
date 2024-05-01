@@ -17,24 +17,60 @@
             width: 2px;
             height: 400px;
             background-color: red;
+            margin-top: 30px;
         }
-        .end{
+        #line{
             position: absolute;
             top: 30px;
             left: 1100px;
             width: 2px;
             height: 400px;
             background-color: red;
+            margin-top: 30px;
+        }
+        #control{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #eee;
+            color: #ccc;
         }
     </style>
     <script src="js/jquery-3.7.1.min.js"></script>
     <script>
         $(function () {
             let setInval;
+            let num = 0; // 표범 번호
+            let count = 0; // 가는 횟수
+            $('#control').click(function(){
+                num++;
+                $(this).html(num);
+                if(num == 5){
+                    num = -1;
+                }
+            });
+            $('#set').click(function(){
+                $('img').css('left',0); // 위치 이동
+                $('.topName').html(''); // 빈 문자열로 글 지우기
+            });
             $('#start').click(function(){
                 setInval = setInterval(function(){
+                    count++;
                     for(let i=0;i<5;i++){
                         let distance = Math.floor(Math.random()*30)+1;
+                        if(count > 15){
+                            if(num != 0){
+                                console.log(num+"현재번호")
+                                if(num == -1){
+                                    num = 5;
+                                    console.log(num+"현재번호")
+                                }
+                                if(i == (num-1)){
+                                        distance += 4;
+                                }
+                                
+                            }
+                        }
                         $('img').eq(i).animate({
                             left:'+=' + distance
                         },500);
@@ -50,7 +86,8 @@
     </script>
 </head>
 <body>
-    <button id="start">출발</button>
+    <button id="start">출발</button>------<button id="set">제자리</button>
+    <div id="control">0</div>
     <span class="topName"></span>
     <br><br>
     <div class="start"></div>
@@ -59,7 +96,7 @@
     <img src="../images/표범.gif" title="3번"><br>
     <img src="../images/표범.gif" title="4번"><br>
     <img src="../images/표범.gif" title="5번"><br>
-    <div class="end"></div>
+    <div class="end" id="line"></div>
 </body>
 </html>
 
