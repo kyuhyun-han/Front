@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 PlugIn</title>   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            $('img').draggable({
+               // scroll:false; // jquery-ui.min 에서 제공
+                revert:'invalid'
+            });
+            $('h2').draggable();
+        });
+    </script>
+</head>
+<body>
+    <div id="inner_fade">
+        <img src="../images/car_green.jpg" alt="">
+        <h2>움직일까?</h2>
+    </div>
+</body>
+</html>
+<!-- jqPlugin3 의 방식을 플러그인으로 간단하게 사용 -->
