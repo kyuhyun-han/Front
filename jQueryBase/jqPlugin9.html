@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 이미지효과</title>   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <style>
+        img{
+            display: none;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            $('h1').tooltip(); // ui 제공 메소드
+            let choice;
+            $('button').click(function(){
+                selectBring();
+            });
+            $('select').change(function(){
+                selectBring();
+            });
+            //ui 효과 가져오기
+            /* $('button').click(function(){
+                $('img').show($('select').val(),2000).delay(1000).hide($('select').val(),2000);
+            }) */
+            // ui 효과 가져오는 함수
+            function selectBring(){
+                choice=$('select').val()
+                $('img').show(choice,2000).delay(2000).hide(choice,2000);
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1 title="자바스크립트 라이브러리">제이쿼리</h1>
+    <button>이미지 보기</button>
+    <select>
+        <option>blind</option>
+        <option>bounce</option>
+        <option>clip</option>
+        <option>drop</option>
+        <option>explode</option>
+        <option>fade</option>
+        <option>fold</option>
+        <option>puff</option>
+        <option>pulsate</option>
+        <option>slide</option>
+        <option>shake</option>
+    </select>
+    <img src="../images/car_green.jpg" alt="">
+</body>
+</html>
+
