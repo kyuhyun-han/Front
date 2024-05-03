@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 슬라이더</title>
+    <style>
+        #animation_canvas{
+            position: relative;
+            width: 600px;   /* 이미지 하나 크기 */
+            overflow: hidden;
+        }
+        .slider_panel{
+            width: 4200px;
+            position: relative;
+        }
+        .slider_image{ /* 슬라이더 보이는 이미지 */
+            width: 600px;
+            height: 400px;
+            float: left;
+        }
+        .slider_text_panel{
+            position: absolute;
+            top: 200px;
+            left: 50px;
+        }
+        .slider_text{
+            position: absolute;
+            width: 300px;
+            height: 200px;
+            color: #ff0;
+
+        }
+        .control_panel{
+            position: absolute;
+            top: 380px;
+            left: 270px;
+            height: 13px;
+            overflow: hidden;
+        }
+        .control_button{
+            position: relative;
+            cursor: pointer;
+            background: url(../images/point_button.png);
+            width: 12px;
+            height: 46px;
+            float: left;
+        }
+        .control_button:hover{
+            top: -16px;
+        }
+        .control_button.active{
+            top: -31px;
+        }
+        .left_right_control_panel{
+            position: relative;
+        }
+        .left_control{
+            position: absolute;
+            top: 140px;
+            left: 15px;
+            cursor: pointer;
+        }
+        .right_control{
+            position: absolute;
+            top: 140px;
+            left: 540px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $('.slider_panel').append($('.slider_image').first().clone()); // 첫번째 이미지를 복제해서 append(뒤에생성) 한다.
+            $('.slider_panel').prepend($('.slider_image').eq(-2).clone()); // 첫번째 이미지를 생성을했기 때문에 eq(-2)를해서 원래 마지막 이미지를 가져온다.
+            let index = 1;
+            moveSlide(index);
+            $('.control_button').click(function(){
+                index=$(this).index();
+                moveSlide(index+1); // 마지막이미지가 앞에있기때문에 1번째 이미지를 첫 화면에서 보여야한다.
+            });
+            $('.left_control').click(function(){
+                if(index > 1){
+                    index--;
+                    moveSlide(index);
+                }else{
+                    $('.slider_panel').css('left',-3600);
+                    index = 5;
+                    moveSlide(index);
+                }
+            });
+            $('.right_control').click(function(){
+                if(index < 5){
+                    index++;
+                    moveSlide(index);
+                }else{
+                    $('.slider_panel').css('left',0); // css를 0(이미지크기)의위치로 -> 안보이는 마지막이미지 부드럽게 넘어간다.
+                    index = 1; // 0이 아닌 1로 변경 ( 0번 인덱스는 마지막 이미지 이기 때문 )
+                    moveSlide(index);
+                }
+            });
+            //이미지 슬라이드 구현 함수
+            function moveSlide(index){
+                $('.slider_panel').animate({
+                    left:-(index*600)
+                },'slow');
+                $('.control_button').removeClass('active');
+                //$(this).addClass('active'); 슬라이드 함수에서의 this를 가르키는 것이 없기때문에 eq(index)로 button을 지정한다.
+                $('.control_button').eq(index-1).addClass('active');//인덱스가 1이기때문에 두번째 버튼이 메인이된다 -> -1을해서 0으로맞춰준다.
+                $('.slider_text').hide();
+                $('.slider_text').eq(index-1).fadeIn('slow');
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>이미지 슬라이더</h1>
+    <!-- 이미지 슬라이더 영역 -->
+    <div id="animation_canvas">
+        <!-- 슬라이더 패널 : 움직이는 이미지가 전환되는 효과 -->
+        <div class="slider_panel">
+            <img class="slider_image" src="../images/Koala.jpg" alt="Koala">
+            <img class="slider_image" src="../images/Desert.jpg" alt="Desert">
+            <img class="slider_image" src="../images/Lighthouse.jpg" alt="Lighthouse">
+            <img class="slider_image" src="../images/Jellyfish.jpg" alt="Jellyfish">
+            <img class="slider_image" src="../images/Penguins.jpg" alt="Penguins">
+        </div>
+        <!-- 각 이미지에 대한 설명글을 담고 있는 패널 -->
+        <div class="slider_text_panel">
+            <div class="slider_text">
+                <h2>Koala</h2>
+                <p>유대목 코알라과에 속하는 포유류. 현지에서는 네이티브베어(native bear)라고 하며, 아기보기곰·나무타기주머니곰·네이티브베어라고도 한다.  </p>
+            </div>
+            <div class="slider_text">
+                <h2>Desert</h2>
+                <p>식물이 자라기 힘든 지역으로, 전체 육지의 1/10을 차지한다. 한랭사막, 중위도 사막, 열대사막으로 구분한다. </p>
+            </div>
+            <div class="slider_text">
+                <h2>Lighthouse</h2>
+                <p>항로표지 중에 시각표지에 해당하며 그중에서도 광파표지/대형 에 속하는 건축물을 의미한다.  </p>
+            </div>
+            <div class="slider_text">
+                <h2>Jellyfish</h2>
+                <p>해파리는 대체로 투명하며, 갓 둘레에 많은 촉수를 가지고 있다. </p>
+            </div>
+            <div class="slider_text">
+                <h2>Penguins</h2>
+                <p>곧추 서서 걸으며 헤엄치기에 알맞게 날개가 지느러미 모양이고 앞다리의 날개깃은 변형되어 있다. </p>
+            </div>
+        </div>
+        <!-- 컨트롤 버튼 패널 -->
+        <div class="control_panel">
+            <div class="control_button"></div>
+            <div class="control_button"></div>
+            <div class="control_button"></div>
+            <div class="control_button"></div>
+            <div class="control_button"></div>
+        </div>
+        <!-- 좌우 컨트롤 버튼 패널 -->
+        <div class="left_right_control_panel">
+            <img class="left_control" src="../images/leftArrow.png" alt="">
+            <img class="right_control" src="../images/rightArrow.png" alt="">
+        </div>
+    </div>
+</body>
+</html>
