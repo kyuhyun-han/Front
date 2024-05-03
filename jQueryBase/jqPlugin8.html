@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 팝업창</title>   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <style>
+        #popup{
+            display: none;
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            z-index: 1000;
+        }
+        #popup > .title{
+            padding: 5px;
+            border: 1px solid #999;
+            background-color: #ccc;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        #popup> .popup_close{
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            top: 5px;
+            right: 5px;
+            border: 1px solid #000;
+            text-decoration: none; /* a태그 밑줄 제거 */
+            color: #000;
+            text-align: center;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            setTimeout(function(){
+                popupOpen();
+            },2000);
+            //$('#popup').draggable(); // 팝업창 드래그
+            $('.title').on({ // 팝업창 드래그
+                mousedown:function(){
+                    $('#popup').draggable({
+                        cursor:'move',
+                        helper:'origin'
+                    });
+                },
+                mousemove:function(){},
+                mouseup:function(){
+                    $('#popup').draggable({
+                        cursor:'not-allowed',//금지표시
+                        helper:'clone' // 복제된 내용
+                    });
+                }
+            })
+        });
+        // 팝업창 오픈 함수
+        function popupOpen(){
+            $('#popup').css({
+                left:300,
+                top:100
+            }).show('blind',500);
+        }
+        // 팝업창 닫기 함수
+        function popupClose(){
+            $('#popup').hide('explode',500)
+        }
+    </script>
+</head>
+<body>
+    <h1>메인 화면</h1>
+    <p>메인 페이지 내용</p>
+    <img src="../images/Koala.jpg" alt="Koala">
+    <!-- 팝업창 영역 -->
+    <div id="popup">
+        <div class="title">공지사항</div>
+        <a href="#" class="popup_close" onclick="popupClose();">x</a>
+        <div class="content">
+            <p>제이쿼리 실무 실습</p>
+            <p>백엔드 수업 시작 - 서버설치</p>
+            <p>파이썬 - 라이브러리 - API</p>
+        </div>
+    </div>
+</body>
+</html>
+
