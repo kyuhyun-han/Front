@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 PlugIn</title>   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <style>
+        img{
+            position: relative;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            /* let str = "";
+            str += "let num1 = 10;";
+            str += "let num2 = 20;";
+            str += "let result = num1 + num2;";
+            str += "alert('두수의 합= ' + result);";
+            eval(str) */
+            $('img').click(function(){
+                $(this).animate({
+                    left:1000
+                },5000).animate({
+                    left:0
+                },5000);
+            });
+            $('button').click(function(){
+                let text = $(this).html();
+                let command = "$('img')." + text;
+                eval(command);
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>stop()</button>
+    <button>stop(true)</button>
+    <button>stop(false,true)</button>
+    <button>stop(true,true)</button>
+    <br>
+    <img src="../images/car_green.jpg" alt="">
+</body>
+</html>
+
