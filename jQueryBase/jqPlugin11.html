@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 dialog()응용</title>   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <style>
+        input,label{
+            width: 95%;
+            margin-bottom: 12px;
+            padding: 0.4em;
+        }
+        .dialogTitle{
+            font-size: 1.3em;
+            text-align: center;
+            color: #00f;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            $('#dialog').dialog({ // 팝업창
+                autoOpen : false, // 자동생성 x (속성이름 : 값 -> 속성의 값을 변경)
+                buttons : {
+                    저장 : function(){
+                        let eventName = $('#event-name').val();
+                        let eventDate = $('#event-date').val();
+                        $('<h2></h2>').html(eventName + ' : ' + eventDate).appendTo('#output');
+                        $('#event-name').val(''); // h2태그를 추가하고 저장되고 빈 상태로 만든다.
+                        $('#event-date').val('');
+                        $('#dialog').dialog('close');
+                    },
+                    초기화 : function(){
+                        $('#event-name').val('');
+                        $('#event-date').val('');
+                    },
+                    취소 : function(){
+                        $('#event-name').val(''); 
+                        $('#event-date').val('');
+                        $('#dialog').dialog('close');
+                    }
+                },
+                modal : true // modal -> 팝업창 작업중에는 메인창 작업을 막는다. / 사용안하면 false
+            });
+            $('.dialogOpen').click(function(){
+                $('#dialog').dialog('open'); // 속성이름만 사용가능 ( 속성의 값을 사용 )
+            });
+            $('#event-date').datepicker({   // 날짜를 보여주는 메소드
+                dateFormat : 'yy년 mm월 dd일',
+                numberOfMonths : 1 //달력이 보이는 갯수
+            }); 
+        });
+    </script>
+</head>
+<body>
+    <!-- 메인 페이지 제목 -->
+    <h1>일정 관리 하기</h1>
+    <button class="dialogOpen">일정 생성</button>
+    <hr>
+    <!-- 저장되는 장소 -->
+    <div id="output">
+
+    </div>
+    <!-- 팝업창으로 일정관리 구현 -->
+    <div id="dialog" title="일정관리">
+        <h2 class="dialogTitle">일정 입력하기</h2>
+        <label for="event-name">일정이름</label>
+        <input type="text" id="event-name">
+        <label for="event-date">날짜</label>
+        <input type="text" id="event-date">
+    </div>
+</body>
+</html>
+
