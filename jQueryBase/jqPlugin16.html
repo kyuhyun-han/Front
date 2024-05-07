@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 tabs()</title>   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <style>
+        
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            $('#tabs').tabs({
+                event : 'mouseover'
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="tabs">
+        <ul>
+            <li><a href="#news01">경제뉴스</a></li>
+            <li><a href="#news02">사회뉴스</a></li>
+            <li><a href="#news03">스포츠뉴스</a></li>
+        </ul>
+        <div id="news01">
+            <p>한국은행이 오늘(7일) 발표한 '2024년 4월 말 외환보유액'을 보면, 지난달 말 기준 우리나라 외환보유액은 4,132억 6,000만 달러로 집계됐습니다.</p>
+            <p>전달(4,192억 5,000만 달러) 대비 59억 9,000만 달러, 0.7% 줄었습니다.</p>
+        </div>
+        <div id="news02">
+            <p>한밤중 인천 강화군의 도로를 달리던 전기차에서 ‘펑’ 소리와 함께 원인 모를 불이나 5600만원 상당의 재산 피해가 발생했다.</p>
+            <p>6일 인천소방본부와 강화경찰서 등에 따르면 전날 오후 9시 48분쯤 인천시 강화군 화도면 이강교차로 인근 도로에서 50대 남성 A씨가 몰던 전기 택시 아이오닉5에서 화재가 발생했다.</p>
+        </div>
+        <div id="news03">
+            <p>이강인이 보루시아도르트문트와 유럽축구연맹(UEFA) 챔피언스리그(UCL) 2차전에서도 선발 제외될 전망이다.</p>
+        </div>
+    </div>
+</body>
+</html>
+
