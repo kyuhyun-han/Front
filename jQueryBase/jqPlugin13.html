@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 ui plugin에서 제공하는 class</title>   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <style>
+        .box{
+            padding: 5px;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            $('#buttonRadio').click(function(){
+                $(this).toggleClass('ui-state-active'); // addClass,removeClass를 한번에 사용
+            });
+            $('#buttonRadio').hover(function(){
+                $(this).addClass('ui-state-hover');
+            },function(){
+                $(this).removeClass('ui-state-hover');
+            });
+            $('#radiobox').buttonset(); // ui 제공 button으로 변경
+            $('#radiobox>input').change(function(){ // 변경함수
+                reset();// 변경할때 마다 호출
+                $('#output').addClass('ui-state-'+$(this).val()); // class를 변경 this.value
+            });
+            $('button').click(function(){
+                reset();
+            });
+            // 사용자 정의 함수
+            function reset(){
+                $('#output').attr('class','ui-widget-content ui-corner-all'); // 속성부여
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="buttonRadio" class="box ui-state-default ui-corner-all"> <!-- ui plugin에서 제공하는 class -->
+        <p>제이쿼리 UI 플러그인 사용법</p>
+    </div>
+    <div id="radiobox">
+        <input type="radio" id="highlight" name="theme" value="highlight"> <!-- radio버튼 중복체크를막기위해 name을 같게 준다. -->
+        <label for="highlight">highlight</label>
+        <input type="radio" id="error" name="theme" value="error">
+        <label for="error">error</label>
+        <input type="radio" id="error-text" name="theme" value="error-text">
+        <label for="error-text">error-text</label>
+        <input type="radio" id="disabled" name="theme" value="disabled">
+        <label for="disabled">disabled</label>
+        <button>RESET</button>
+    </div>
+    <div id="output">
+        <p>지금의 바이에른은 나겔스만 감독을 경질했던 수뇌부가 모조리 떠나고, 새로운 수뇌부가 온 상황이었기에 다시 한번 '천재 감독' 나겔스만에게 기회를 주고자 했다. 그러나 바이에른 내부에서도 나겔스만 감독에 대한 여론이 나뉘자 나겔스만 감독은 바이에른 복귀를 거절했다.</p>
+        <p>우나이 에메리 애스톤 빌라 감독 그리고 로베르트 데 제르비 브라이튼 감독이었다. 최종적으로 바이에른의 플랜C는 랑닉 감독이었지만 결정이 나오기 전부터 에메리 감독은 빌라와 재계약을 공식 체결하면서 바이에른으로 가지 않겠다는 입장을 확실하게 밝혔다.</p>
+    </div>
+</body>
+</html>
+
