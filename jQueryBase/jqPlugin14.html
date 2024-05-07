@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 droppable()</title>   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <style>
+        .item{
+            margin: 3px;
+            padding: 5px;
+
+        }
+        .item > img{
+            width: 100px;
+            height: 100px;
+        }
+        #wrap{
+            overflow: hidden;
+        }
+        #wrap > div{
+            float: left;
+        }
+        #dock{
+            position: fixed;
+            min-height: 120px;
+            width: 100%;
+            bottom: 0;
+            z-index: 1;
+        }
+        #dock > div{ 
+            float: right;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            for(let i=0; i<21; i++){
+                let icon='';
+                icon+='<div class="ui-widget-content ui-corner-all item">';
+                icon+='<img src="../images/'+i+'.png">';
+                icon+='</div>';
+                $('#wrap').append(icon);
+            }
+            $('#wrap>div').draggable({
+                scroll : false, // 스크롤위치고정
+                zIndex : 100,
+                helper : 'clone', // 클론생성
+                revert : 'invalid' // 스크롤 취소하면 제자리로 돌아감
+            });
+            $('#dock').droppable({
+                accept : '#wrap>div', // wrap에 있는 div를 #dock 에서 받아들인다.
+                drop : function(e,ui){
+                    $(ui.draggable).fadeOut('fast',function(){
+                        $(this).appendTo('#dock').fadeIn('fast');
+                    });
+                }
+            });
+            $('#wrap').droppable({
+                accept : '#dock>div', // dock에 있는 div를 #wrap 에서 받아들인다.
+                drop : function(e,ui){
+                    $(ui.draggable).fadeOut('fast',function(){
+                        $(this).appendTo('#wrap').fadeIn('fast');
+                    });
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+
+    </div>
+    <div id="dock" class="ui-state-error"></div>
+</body>
+</html>
+
