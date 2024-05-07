@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 autocomplete()</title>   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <style>
+        
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            let words = ['able','apple','application','bear','bit','byte','car','cable'];
+            $('#english').autocomplete({ // 자동완성 메소드 
+                source : words
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <label for="english">단어</label>
+        <input type="text" id="english">
+    </div>
+</body>
+</html>
+
