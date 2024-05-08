@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 객체</title>
+    <style>
+        
+    </style>    
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+            let product = {
+                name : '냉장고',
+                price : '1950000',
+                type : '양문형'
+            };
+            let result = prodInfo.bind(product);
+            function prodInfo(){
+                alert(this.name);
+            };
+            let pcode = {
+                code : 'ss5123',
+                number : 123
+            };
+            $.extend(product,pcode); // 확장 병합
+            console.log(product);
+            alert(product.code);
+    </script>
+</head>
+<body>
+    <h2 onclick="result();">제품정보</h2>
+</body>
+</html>
+<!-- 2024-05-08 -->

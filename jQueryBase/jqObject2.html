@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 객체</title>
+    <style>
+        
+    </style>    
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        let wh = {
+            width : 500,
+            height : 700
+        }
+        let size = {
+            width : 300,
+            height : 200
+        }
+        $.extend(wh,size) // extend(원본객체, 확장할객체) 속성이 같으면 확장할객체의 값으로 덮어씌어진다.
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+<!-- 2024-05-08 -->

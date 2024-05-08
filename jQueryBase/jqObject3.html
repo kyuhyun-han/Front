@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 객체</title>
+    <style>
+        
+    </style>    
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function (){
+            $('button').click(function (){
+                $('.koala').wrap('<div></div>');
+            });
+            let nums = [10,20,30];
+            nums.push(40);
+            let nums2 = [10,20,30];
+            let nums3 = Array.from(nums2); // from(객체)를 복사해서 새로운 객체를 만든다.
+            nums3.push(40);
+            console.log(nums3);
+            let nums4 = [10,20,30];
+            let nums5 = nums4.concat(40);
+            console.log(nums5)
+        });
+    </script>
+</head>
+<body>
+    <button>영역만들기</button>
+    <img class="koala" src="../images/Koala.jpg" alt="koala">
+</body>
+</html>
+<!-- 2024-05-08 -->
