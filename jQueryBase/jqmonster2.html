@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>몬스터 만들기(이미지 슬라이드)</title>   
+    <style>
+        body{
+            background-color: #000;
+        }
+        .lightning {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 0;
+        }
+        #top{
+            position: relative;
+            left: 0;
+            top: 0;
+            height: 80px;
+            z-index: 10;
+        }
+        #top > .text_top {
+            position: absolute;
+            left: 200px;
+            top: 10px;
+        }
+        #top > p {
+            position: absolute;
+            left: 140px;
+            top: 30px;
+            color: #33ff66;
+        }
+        #top > .random_top{
+            position: absolute;
+            left: 580px;
+            top: 20px;
+            cursor: pointer;
+        }
+        #container{
+            position: relative;
+            left: 0;
+            top: 0;
+            height: 700px;
+        }
+        .frame{
+            position: absolute;
+            left: 100px;
+            top: 0;
+            width: 546px;
+            height: 629px;
+            background-image: url(images/frame.png);
+        }
+        .pic_box{
+            position: absolute;
+            left: 91px;
+            top: 84px;
+            width: 367px;
+            height: 460px;
+            overflow: hidden;
+        }
+        .face{
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+        .head{
+            height: 172px;
+        }
+        .eyes{
+            height: 79px;
+        }
+        .nose{
+            height: 86px;
+        }
+        .mouth{
+            height: 123px;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            let clix = [0,0,0,0]; // 머리 눈 코 입 의 index를 배열로 선언
+            lightning(); // 시작하자마자 번개실행
+            let index; // clix배열의 인덱스
+
+            $('.random_top').click(function(){
+                $('.face').each(function(index){ // face 각각에 함수 실행
+                    clix[index] = Math.round(Math.random() * 9)
+                    monsterMove(index,this)
+                })
+            });
+            $('.face').click(function(){// 클릭한 인덱스와 객체를 받는다.
+                let index = $(this).index();
+                monsterMove(index,this);  // 머리를클릭하면 0,머리객체를 받음
+            });
+            // 몬스터 이미지 슬라이드 구현 함수
+            function monsterMove(index,obj){ // click이벤트로 받아온 인덱스와 객체
+                    clix[index]++;
+                    if(clix[index] < 10){
+                        $(obj).animate({ // this가 아닌 받아온 객체에 animate해야한다.
+                            left:-(clix[index]*367)
+                        },'slow');
+                    }else{
+                        $(obj).animate({
+                            left:0
+                        },'slow');
+                        clix[index] = 0;
+                    }
+                };
+
+            // 번개 구현
+            setInterval(function(){
+                $('.lightning2').fadeIn(250).fadeOut(250);
+            },5000);
+            setInterval(function(){
+                $('.lightning3').fadeIn(250).fadeOut(250);
+            },7000);
+            // 번개 치는 함수
+            function lightning(){
+                $('.lightning1').fadeIn(250).fadeOut(250);
+                setTimeout(function(){// 한번 수행 settimeout 사용 
+                    lightning(); // 재귀호출 ( 자기자신 호출 )
+                },4000);
+            };
+        });
+    </script>
+</head>
+<body>
+    <img class="lightning lightning1" src="images/lightning-01.jpg" alt="lightning-01" >
+    <img class="lightning lightning2" src="images/lightning-02.jpg" alt="lightning-02" >
+    <img class="lightning lightning3" src="images/lightning-03.jpg" alt="lightning-03" >
+    <header id="top">
+        <img  class="text_top" src="images/Monster_Mashup.png" alt="Monster_Mashup">
+        <p>Make your own monster face by clicking on the picture.</p>
+        <img class="random_top" src="images/monster.png" alt="monster" title="클릭하면 랜덤하게 몬스터가 만들어 진다.">
+    </header>
+    <div id="container">
+        <div class="frame">
+            <div class="pic_box">
+                <div class="head face">
+                    <img src="images/headsstrip.jpg" alt="head">
+                </div>
+                <div class="eyes face">
+                    <img src="images/eyesstrip.jpg" alt="eyes">
+                </div>
+                <div class="nose face">
+                    <img src="images/nosesstrip.jpg" alt="nose">
+                </div>
+                <div class="mouth face">
+                    <img src="images/mouthsstrip.jpg" alt="mouth">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
