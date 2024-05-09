@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 Plugin 만들기</title> 
+    <style>
+        #pivot_slider  img {
+            width: 100%;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>  
+    <script src="js/pivot.js"></script> <!-- 내가만든 plugin  -->
+    <script>
+        $(function () {
+            $('#pivot_slider').pivot({
+                width : 700,
+                height : 700
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="pivot_slider">
+        <div>
+            <h2>Koala</h2>
+            <img src="../images/Koala.jpg" alt="Koala">
+            <p>생김새가 곰처럼 생겼기 때문에[1] 토종곰, 즉 네이티브 베어(Native Bear)라고 부르기도 하며 과거에는 나무곰(Tree Bear)이나 원숭이곰(Monkey Bear)이라는 명칭도 있었다.</p>
+        </div>
+        <div>
+            <h2>Desert</h2>
+            <img src="../images/Desert.jpg" alt="Desert">
+            <p>식물이 자라기 힘든 지역으로, 전체 육지의 1/10을 차지한다. 한랭사막, 중위도 사막, 열대사막으로 구분한다. </p>
+        </div>
+        <div>
+            <h2>Lighthouse</h2>
+            <img src="../images/Lighthouse.jpg" alt="Lighthouse">
+            <p>항로표지 중에 시각표지에 해당하며 그중에서도 광파표지/대형 에 속하는 건축물을 의미한다.  </p>
+        </div>
+        <div>
+            <h2>Jellyfish</h2>
+            <img src="../images/Jellyfish.jpg" alt="Jellyfish">
+            <p>해파리는 대체로 투명하며, 갓 둘레에 많은 촉수를 가지고 있다. </p>
+        </div>
+        <div>
+            <h2>Penguins</h2>
+            <img src="../images/Penguins.jpg" alt="Penguins">
+            <p>곧추 서서 걸으며 헤엄치기에 알맞게 날개가 지느러미 모양이고 앞다리의 날개깃은 변형되어 있다. </p>
+        </div>
+    </div>
+</body>
+</html>
+
