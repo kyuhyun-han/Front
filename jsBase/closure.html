@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클로저활용(Closure) 활용 - 캡슐화</title>
+    <script>
+        let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let canvasWidth = 700;
+        let canvasHeight = 400;
+        // 랜덤함 정수를 생성하는 함수
+        function randomInt(limit){
+            return Math.round(Math.random()*limit);
+        }
+        // 양수, 음수값으로 랜덤한 속도를 생성하는 함수
+        function randomSpeed(maxSpeed){
+            return Math.random()*maxSpeed - Math.random()*maxSpeed;
+        }
+        // 랜덤한 알파벳을 리턴하는 함수
+        /* function randomAlpha(){
+            
+            return alphabet.charAt(randomInt(25));
+        } */
+        let randomAlpha = (function(){
+            let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            return function(){
+                return alphabet.charAt(randomInt(25));
+            }
+        })();
+        //글자가 이동하는 생성자 함수 (첫 글자 대문자)
+        function MovingText(){
+            alphabet = 'ABCD';
+            this.x = randomInt(canvasWidth);
+            this.y = randomInt(canvasHeight);
+            this.vx = randomSpeed(10);
+            this.vy = randomSpeed(10);
+            this.header = document.createElement('h1');
+            this.header.innerHTML = randomAlpha();
+            this.header.style.position = 'absolute';
+            document.body.appendChild(this.header);
+        }
+        MovingText.prototype.move = function(){
+            if(this.x < 0 || this.x > canvasWidth){
+                this.vx *= -1
+            }
+            if(this.y < 0 || this.y > canvasHeight){
+                this.vy *= -1
+            }
+            this.x += this.vx;
+            this.y += this.vy;
+            this.header.style.left = this.x +'px';
+            this.header.style.top = this.y +'px';
+        }
+
+        window.onload = function(){
+            let moveTexts = [];
+            for(let i=0; i<100; i++){
+                moveTexts.push(new MovingText()); // 익명 생성자 함수의 인스턴스 객체 생성
+            }
+            setInterval(() => {
+                for(let i in moveTexts){
+                    moveTexts[i].move();
+                }
+            },1000/50); // 초당 50번
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
