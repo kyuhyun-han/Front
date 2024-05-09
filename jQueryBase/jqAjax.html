@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function() {
+            $.ajax({
+                url: 'head.html',
+                success: function(data) {
+                    $('body').prepend(data);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="content">
+        <h2>여기는 본문</h2>
+        <p>본문 내용입니다.</p>
+    </div>
+</body>
+</html>
