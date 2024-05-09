@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 라이브러리 ajax3</title>   
+    <style>
+        
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                url:"product.xml",
+                success : function(data){ // 연결되면 data(매개변수)를 가져온다.
+                    $(data).find('product').each(function(){ // find() ()안의 값을 가져온다. (태그,아이디,클래스...) 
+                        let name = $(this).find('name').html(); //produce태그의 각각의 name의 html()을 가져온다.
+                        let price = $(this).find('price').html();
+                        $('<h2></h2>').html(name + ' : ' + price).appendTo('#list');
+                    });
+                },
+                error : function(){
+                    alert("접속에러")
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>편의점 물품리스트</h1>
+    <div id="list">
+
+    </div>
+</body>
+</html>
+
